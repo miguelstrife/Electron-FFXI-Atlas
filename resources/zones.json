@@ -1,312 +1,99 @@
 {
-  "0": {
-    "en": "Kingdom of San d'Oria",
-    "ja": "サンドリア王国",
-    "map": "kingdom_of_san_d_oria"
-  },
-  "1": {
-    "en": "Republic of Bastok",
-    "ja": "バストゥーク共和国",
-    "map": "republic_of_bastok"
-  },
-  "2": {
-    "en": "Federation of Windurst",
-    "ja": "ウィンダス連邦",
-    "map": "federation_of_windurst"
-  },
-  "3": {
-    "en": "Grand Duchy of Jeuno",
-    "ja": "ジュノ大公国",
-    "map": "grand_duchy_of_jeuno"
-  },
-  "4": {
-    "en": "Ronfaure",
-    "ja": "ロンフォール",
-    "map": "ronfaure"
-  },
-  "5": {
-    "en": "Zulkheim",
-    "ja": "ザルクヘイム",
-    "map": "zulkheim"
-  },
-  "6": {
-    "en": "Norvallen",
-    "ja": "ノルバレン",
-    "map": "norvallen"
-  },
-  "7": {
-    "en": "Gustaberg",
-    "ja": "グスタベルグ",
-    "map": "gustaberg"
-  },
-  "8": {
-    "en": "Derfland",
-    "ja": "デルフラント",
-    "map": "derfland"
-  },
-  "9": {
-    "en": "Sarutabaruta",
-    "ja": "サルタバルタ",
-    "map": "sarutabaruta"
-  },
-  "10": {
-    "en": "Kolshushu",
-    "ja": "コルシュシュ",
-    "map": "kolshushu"
-  },
-  "11": {
-    "en": "Aragoneu",
-    "ja": "アラゴーニュ",
-    "map": "aragoneu"
-  },
-  "12": {
-    "en": "Fauregandi",
-    "ja": "フォルガンディ",
-    "map": "fauregandi"
-  },
-  "13": {
-    "en": "Valdeaunia",
-    "ja": "バルドニア",
-    "map": "valdeaunia"
-  },
-  "14": {
-    "en": "Qufim",
-    "ja": "クフィム",
-    "map": "qufim"
-  },
-  "15": {
-    "en": "Li'Telor",
-    "ja": "リ・テロア",
-    "map": "li_telor"
-  },
-  "16": {
-    "en": "Kuzotz",
-    "ja": "クゾッツ",
-    "map": "kuzotz"
-  },
-  "17": {
-    "en": "Vollbow",
-    "ja": "ヴォルボー",
-    "map": "vollbow"
-  },
-  "18": {
-    "en": "Elshimo Lowlands",
-    "ja": "低地エルシモ",
-    "map": "elshimo_lowlands"
-  },
-  "19": {
-    "en": "Elshimo Uplands",
-    "ja": "高地エルシモ",
-    "map": "elshimo_uplands"
-  },
-  "20": {
-    "en": "Tu'Lia",
-    "ja": "トゥー・リア",
-    "map": "tu_lia"
-  },
-  "21": {
-    "en": "Dynamis",
-    "ja": "デュナミス",
-    "map": "dynamis"
-  },
-  "22": {
-    "en": "Movalpolos",
-    "ja": "ムバルポロス",
-    "map": "movalpolos"
-  },
-  "23": {
-    "en": "Tavnazian Marquisate",
-    "ja": "タブナジア侯国",
-    "map": "tavnazian_marquisate"
-  },
-  "24": {
-    "en": "Tavnazian Archipelago",
-    "ja": "タブナジア群島",
-    "map": "tavnazian_archipelago"
-  },
-  "25": {
-    "en": "Promyvion",
-    "ja": "プロミヴォン",
-    "map": "promyvion"
-  },
-  "26": {
-    "en": "Lumoria",
-    "ja": "ルモリア",
-    "map": "lumoria"
-  },
-  "27": {
-    "en": "Limbus",
-    "ja": "リンバス",
-    "map": "limbus"
-  },
-  "28": {
-    "en": "Western Aradjiah",
-    "ja": "西洋エラジア",
-    "map": "western_aradjiah"
-  },
-  "29": {
-    "en": "West Aht Urhgan",
-    "ja": "西アトルガン地方",
-    "map": "west_aht_urhgan"
-  },
-  "30": {
-    "en": "Mamool Ja Savagelands",
-    "ja": "マムージャ蕃国",
-    "map": "mamool_ja_savagelands"
-  },
-  "31": {
-    "en": "Halvung Territory",
-    "ja": "ハルブーン傭兵団領",
-    "map": "halvung_territory"
-  },
-  "32": {
-    "en": "Arrapago Islands",
-    "ja": "アラパゴ諸島",
-    "map": "arrapago_islands"
-  },
-  "33": {
-    "en": "Ruins of Alzadaal",
-    "ja": "アルザダール文明遺跡群",
-    "map": "ruins_of_alzadaal"
-  },
-  "34": {
-    "en": "Ronfaure Front",
-    "ja": "ロンフォール戦線",
-    "map": "ronfaure_front"
-  },
-  "35": {
-    "en": "Norvallen Front",
-    "ja": "ノルバレン戦線",
-    "map": "norvallen_front"
-  },
-  "36": {
-    "en": "Gustaberg Front",
-    "ja": "グスタベルグ戦線",
-    "map": "gustaberg_front"
-  },
-  "37": {
-    "en": "Derfland Front",
-    "ja": "デルフラント戦線",
-    "map": "derfland_front"
-  },
-  "38": {
-    "en": "Sarutabaruta Front",
-    "ja": "サルタバルタ戦線",
-    "map": "sarutabaruta_front"
-  },
-  "39": {
-    "en": "Aragoneu Front",
-    "ja": "アラゴーニュ戦線",
-    "map": "aragoneu_front"
-  },
-  "40": {
-    "en": "Fauregandi Front",
-    "ja": "フォルガンディ戦線",
-    "map": "fauregandi_front"
-  },
-  "41": {
-    "en": "Valdeaunia Front",
-    "ja": "バルドニア戦線",
-    "map": "valdeaunia_front"
-  },
-  "42": {
-    "en": "Orcish Hosts",
-    "ja": "オーク帝国軍",
-    "map": "orcish_hosts"
-  },
-  "43": {
-    "en": "Quadav Shieldwarriors",
-    "ja": "クゥダフ兵団",
-    "map": "quadav_shieldwarriors"
-  },
-  "44": {
-    "en": "Yagudo Theomilitary",
-    "ja": "ヤグード教団軍",
-    "map": "yagudo_theomilitary"
-  },
-  "45": {
-    "en": "Dark Kindred",
-    "ja": "闇の王親衛隊",
-    "map": "dark_kindred"
-  },
-  "46": {
-    "en": "Abyssea",
-    "ja": "アビセア",
-    "map": "abyssea"
-  },
-  "47": {
-    "en": "The Threshold",
-    "ja": "スレッショルド",
-    "map": "the_threshold"
-  },
-  "48": {
-    "en": "Abdhaljs",
-    "ja": "アブダルス",
-    "map": "abdhaljs"
-  },
-  "49": {
-    "en": "Sacred City of Adoulin",
-    "ja": "神聖アドゥリン都市同盟",
-    "map": "sacred_city_of_adoulin"
-  },
-  "50": {
-    "en": "Adoulin Isles",
-    "ja": "アドゥリン諸島",
-    "map": "adoulin_isles"
-  },
-  "51": {
-    "en": "East Ulbuka Territory",
-    "ja": "東ウルブカ地方",
-    "map": "east_ulbuka_territory"
-  },
-  "52": {
-    "en": "Ra'Kaznar",
-    "ja": "ラ・カザナル",
-    "map": "ra_kaznar"
-  },
-  "53": {
-    "en": "Escha",
-    "ja": "エスカ",
-    "map": "escha"
-  },
-  "54": {
-    "en": "The Far East",
-    "ja": "ひんがし",
-    "map": "the_far_east"
-  },
-  "55": {
-    "en": "Valhalla",
-    "ja": "ヴァルハラ",
-    "map": "valhalla"
-  },
-  "56": {
-    "en": "Gugru Blue",
-    "ja": "ググリュー洋を",
-    "map": "gugru_blue"
-  },
-  "57": {
-    "en": "Bastore Sea",
-    "ja": "バストア海",
-    "map": "bastore_sea"
-  },
-  "58": {
-    "en": "Quon",
-    "ja": "クォン",
-    "map": "quon"
-  },
-  "59": {
-    "en": "Mindartia",
-    "ja": "ミンダルシア",
-    "map": "mindartia"
-  },
-  "60": {
-    "en": "Elshimo",
-    "ja": "エルシモ",
-    "map": "elshimo"
-  },
-  "61": {
-    "en": "Mordion",
-    "ja": "モルディオン",
-    "map": "mordion"
-  }
+  "1": "phanauet_channel",
+  "2": "carpenters_landing",
+  "3": "manaclipper",
+  "4": "bibiki_bay",
+  "5": "uleguerand_range",
+  "6": "bearclaw_pinnacle",
+  "7": "attohwa_chasm",
+  "8": "boneyard_gully",
+  "9": "pso_xja",
+  "10": "the_shrouded_maw",
+  "11": "oldton_movalpolos",
+  "12": "newton_movalpolos",
+  "13": "mine_shaft_2716",
+  "14": "hall_of_transference",
+  "16": "promyvion_holla",
+  "17": "spire_of_holla",
+  "18": "promyvion_dem",
+  "19": "spire_of_dem",
+  "20": "promyvion_mea",
+  "21": "spire_of_mea",
+  "22": "promyvion_vahzl",
+  "23": "spire_of_vahzl",
+  "24": "lufaise_meadows",
+  "25": "misareaux_coast",
+  "26": "tavnazian_safehold",
+  "27": "phomiuna_aqueducts",
+  "28": "sacrarium",
+  "29": "riverne_site_b01",
+  "30": "riverne_site_a01",
+  "31": "monarch_linn",
+  "32": "sealion_s_den",
+  "33": "al_taieu",
+  "34": "grand_palace_of_hu_xzoi",
+  "35": "the_garden_of_ru_hmet",
+  "36": "empyreal_paradox",
+  "37": "temenos",
+  "38": "apollyon",
+  "39": "dynamis_valkurm",
+  "40": "dynamis_buburimu",
+  "41": "dynamis_qufim",
+  "42": "dynamis_tavnazia",
+  "43": "diorama_abdhaljs_ghelsba",
+  "44": "abdhaljs_isle_purgonorgo",
+  "46": "open_sea_route_to_al_zahbi",
+  "47": "open_sea_route_to_mhaura",
+  "48": "al_zahbi",
+  "50": "aht_urhgan_whitegate",
+  "51": "wajaom_woodlands",
+  "52": "bhaflau_thickets",
+  "53": "nashmau",
+  "54": "arrapago_reef",
+  "55": "ilrusi_atoll",
+  "56": "periqia",
+  "57": "talacca_cove",
+  "58": "silver_sea_route_to_nashmau",
+  "59": "silver_sea_route_to_al_zahbi",
+  "60": "the_ashu_talif",
+  "61": "mount_zhayolm",
+  "62": "halvung",
+  "63": "lebros_cavern",
+  "64": "navukgo_execution_chamber",
+  "65": "mamook",
+  "66": "mamool_ja_training_grounds",
+  "67": "jade_sepulcher",
+  "68": "aydeewa_subterrane",
+  "69": "leujaoam_sanctum",
+  "70": "chocobo_circuit",
+  "71": "the_colosseum",
+  "72": "alzadaal_undersea_ruins",
+  "73": "zhayolm_remnants",
+  "74": "arrapago_remnants",
+  "75": "bhaflau_remnants",
+  "76": "silver_sea_remnants",
+  "77": "nyzul_isle",
+  "78": "hazhalm_testing_grounds",
+  "79": "caedarva_mire",
+  "80": "southern_san_d_oria_s",
+  "81": "east_ronfaure_s",
+  "82": "jugner_forest_s",
+  "83": "vunkerl_inlet_s",
+  "84": "batallia_downs_s",
+  "85": "la_vaule_s",
+  "86": "everbloom_hollow",
+  "87": "bastok_markets_s",
+  "88": "north_gustaberg_s",
+  "89": "grauberg_s",
+  "90": "pashhow_marshlands_s",
+  "91": "rolanberry_fields_s",
+  "92": "beadeaux_s",
+  "93": "ruhotz_silvermines",
+  "94": "windurst_waters_s",
+  "95": "west_sarutabaruta_s",
+  "96": "fort_karugo_narugo_s",
+  "97": "meriphataud_mountains_s",
+  "98": "sauromugue_champaign_s",
+  "99": "castle_oztroja_s",
+  "100": "west_ronfaure"
 }

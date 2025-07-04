@@ -1,0 +1,312 @@
+{
+  "0": {
+    "en": "Kingdom of San d'Oria",
+    "ja": "サンドリア王国",
+    "map": "kingdom_of_san_d_oria"
+  },
+  "1": {
+    "en": "Republic of Bastok",
+    "ja": "バストゥーク共和国",
+    "map": "republic_of_bastok"
+  },
+  "2": {
+    "en": "Federation of Windurst",
+    "ja": "ウィンダス連邦",
+    "map": "federation_of_windurst"
+  },
+  "3": {
+    "en": "Grand Duchy of Jeuno",
+    "ja": "ジュノ大公国",
+    "map": "grand_duchy_of_jeuno"
+  },
+  "4": {
+    "en": "Ronfaure",
+    "ja": "ロンフォール",
+    "map": "ronfaure"
+  },
+  "5": {
+    "en": "Zulkheim",
+    "ja": "ザルクヘイム",
+    "map": "zulkheim"
+  },
+  "6": {
+    "en": "Norvallen",
+    "ja": "ノルバレン",
+    "map": "norvallen"
+  },
+  "7": {
+    "en": "Gustaberg",
+    "ja": "グスタベルグ",
+    "map": "gustaberg"
+  },
+  "8": {
+    "en": "Derfland",
+    "ja": "デルフラント",
+    "map": "derfland"
+  },
+  "9": {
+    "en": "Sarutabaruta",
+    "ja": "サルタバルタ",
+    "map": "sarutabaruta"
+  },
+  "10": {
+    "en": "Kolshushu",
+    "ja": "コルシュシュ",
+    "map": "kolshushu"
+  },
+  "11": {
+    "en": "Aragoneu",
+    "ja": "アラゴーニュ",
+    "map": "aragoneu"
+  },
+  "12": {
+    "en": "Fauregandi",
+    "ja": "フォルガンディ",
+    "map": "fauregandi"
+  },
+  "13": {
+    "en": "Valdeaunia",
+    "ja": "バルドニア",
+    "map": "valdeaunia"
+  },
+  "14": {
+    "en": "Qufim",
+    "ja": "クフィム",
+    "map": "qufim"
+  },
+  "15": {
+    "en": "Li'Telor",
+    "ja": "リ・テロア",
+    "map": "li_telor"
+  },
+  "16": {
+    "en": "Kuzotz",
+    "ja": "クゾッツ",
+    "map": "kuzotz"
+  },
+  "17": {
+    "en": "Vollbow",
+    "ja": "ヴォルボー",
+    "map": "vollbow"
+  },
+  "18": {
+    "en": "Elshimo Lowlands",
+    "ja": "低地エルシモ",
+    "map": "elshimo_lowlands"
+  },
+  "19": {
+    "en": "Elshimo Uplands",
+    "ja": "高地エルシモ",
+    "map": "elshimo_uplands"
+  },
+  "20": {
+    "en": "Tu'Lia",
+    "ja": "トゥー・リア",
+    "map": "tu_lia"
+  },
+  "21": {
+    "en": "Dynamis",
+    "ja": "デュナミス",
+    "map": "dynamis"
+  },
+  "22": {
+    "en": "Movalpolos",
+    "ja": "ムバルポロス",
+    "map": "movalpolos"
+  },
+  "23": {
+    "en": "Tavnazian Marquisate",
+    "ja": "タブナジア侯国",
+    "map": "tavnazian_marquisate"
+  },
+  "24": {
+    "en": "Tavnazian Archipelago",
+    "ja": "タブナジア群島",
+    "map": "tavnazian_archipelago"
+  },
+  "25": {
+    "en": "Promyvion",
+    "ja": "プロミヴォン",
+    "map": "promyvion"
+  },
+  "26": {
+    "en": "Lumoria",
+    "ja": "ルモリア",
+    "map": "lumoria"
+  },
+  "27": {
+    "en": "Limbus",
+    "ja": "リンバス",
+    "map": "limbus"
+  },
+  "28": {
+    "en": "Western Aradjiah",
+    "ja": "西洋エラジア",
+    "map": "western_aradjiah"
+  },
+  "29": {
+    "en": "West Aht Urhgan",
+    "ja": "西アトルガン地方",
+    "map": "west_aht_urhgan"
+  },
+  "30": {
+    "en": "Mamool Ja Savagelands",
+    "ja": "マムージャ蕃国",
+    "map": "mamool_ja_savagelands"
+  },
+  "31": {
+    "en": "Halvung Territory",
+    "ja": "ハルブーン傭兵団領",
+    "map": "halvung_territory"
+  },
+  "32": {
+    "en": "Arrapago Islands",
+    "ja": "アラパゴ諸島",
+    "map": "arrapago_islands"
+  },
+  "33": {
+    "en": "Ruins of Alzadaal",
+    "ja": "アルザダール文明遺跡群",
+    "map": "ruins_of_alzadaal"
+  },
+  "34": {
+    "en": "Ronfaure Front",
+    "ja": "ロンフォール戦線",
+    "map": "ronfaure_front"
+  },
+  "35": {
+    "en": "Norvallen Front",
+    "ja": "ノルバレン戦線",
+    "map": "norvallen_front"
+  },
+  "36": {
+    "en": "Gustaberg Front",
+    "ja": "グスタベルグ戦線",
+    "map": "gustaberg_front"
+  },
+  "37": {
+    "en": "Derfland Front",
+    "ja": "デルフラント戦線",
+    "map": "derfland_front"
+  },
+  "38": {
+    "en": "Sarutabaruta Front",
+    "ja": "サルタバルタ戦線",
+    "map": "sarutabaruta_front"
+  },
+  "39": {
+    "en": "Aragoneu Front",
+    "ja": "アラゴーニュ戦線",
+    "map": "aragoneu_front"
+  },
+  "40": {
+    "en": "Fauregandi Front",
+    "ja": "フォルガンディ戦線",
+    "map": "fauregandi_front"
+  },
+  "41": {
+    "en": "Valdeaunia Front",
+    "ja": "バルドニア戦線",
+    "map": "valdeaunia_front"
+  },
+  "42": {
+    "en": "Orcish Hosts",
+    "ja": "オーク帝国軍",
+    "map": "orcish_hosts"
+  },
+  "43": {
+    "en": "Quadav Shieldwarriors",
+    "ja": "クゥダフ兵団",
+    "map": "quadav_shieldwarriors"
+  },
+  "44": {
+    "en": "Yagudo Theomilitary",
+    "ja": "ヤグード教団軍",
+    "map": "yagudo_theomilitary"
+  },
+  "45": {
+    "en": "Dark Kindred",
+    "ja": "闇の王親衛隊",
+    "map": "dark_kindred"
+  },
+  "46": {
+    "en": "Abyssea",
+    "ja": "アビセア",
+    "map": "abyssea"
+  },
+  "47": {
+    "en": "The Threshold",
+    "ja": "スレッショルド",
+    "map": "the_threshold"
+  },
+  "48": {
+    "en": "Abdhaljs",
+    "ja": "アブダルス",
+    "map": "abdhaljs"
+  },
+  "49": {
+    "en": "Sacred City of Adoulin",
+    "ja": "神聖アドゥリン都市同盟",
+    "map": "sacred_city_of_adoulin"
+  },
+  "50": {
+    "en": "Adoulin Isles",
+    "ja": "アドゥリン諸島",
+    "map": "adoulin_isles"
+  },
+  "51": {
+    "en": "East Ulbuka Territory",
+    "ja": "東ウルブカ地方",
+    "map": "east_ulbuka_territory"
+  },
+  "52": {
+    "en": "Ra'Kaznar",
+    "ja": "ラ・カザナル",
+    "map": "ra_kaznar"
+  },
+  "53": {
+    "en": "Escha",
+    "ja": "エスカ",
+    "map": "escha"
+  },
+  "54": {
+    "en": "The Far East",
+    "ja": "ひんがし",
+    "map": "the_far_east"
+  },
+  "55": {
+    "en": "Valhalla",
+    "ja": "ヴァルハラ",
+    "map": "valhalla"
+  },
+  "56": {
+    "en": "Gugru Blue",
+    "ja": "ググリュー洋を",
+    "map": "gugru_blue"
+  },
+  "57": {
+    "en": "Bastore Sea",
+    "ja": "バストア海",
+    "map": "bastore_sea"
+  },
+  "58": {
+    "en": "Quon",
+    "ja": "クォン",
+    "map": "quon"
+  },
+  "59": {
+    "en": "Mindartia",
+    "ja": "ミンダルシア",
+    "map": "mindartia"
+  },
+  "60": {
+    "en": "Elshimo",
+    "ja": "エルシモ",
+    "map": "elshimo"
+  },
+  "61": {
+    "en": "Mordion",
+    "ja": "モルディオン",
+    "map": "mordion"
+  }
+}
