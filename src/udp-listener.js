@@ -1,10 +1,16 @@
 const dgram = require('dgram');
-const server = dgram.createSocket('udp4');
+const socket = dgram.createSocket('udp4');
+const emitter = global.sharedPositionEmitter || require('events').EventEmitter.prototype;
+const EventEmitter = require('events');
 
-server.on('message', (msg, rinfo) => {
-    const [x, y, z] = msg.toString().split(',').map(parseFloat);
-    // Use the data in your UI
-    console.log(`Player position: X=${x}, Y=${y}, Z=${z}`);
+const eventEmitter = new EventEmitter();
+
+socket.on('message', (msg, rinfo) => {
+    const [x, , z, zoneId] = msg.toString().split(',');
+    emitter.emit('position', { x: parseFloat(x), z: parseFloat(z), zoneId });
+    eventEmitter.emit('position', { x: parseFloat(x), z: parseFloat(z), zoneId });
+    // For debugging purposes, log the received position
+    console.log(`Received position update: x=${x}, z=${z}, zoneId=${zoneId} from ${rinfo.address}:${rinfo.port}`);
 });
 
-server.bind(12345);
+socket.bind(12345);
