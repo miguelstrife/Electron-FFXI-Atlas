@@ -621,15 +621,15 @@ ashita.events.register('d3d_beginscene', 'd3d_beginscene_callback1', function (i
 
     -- isRenderingBackBuffer is a flag that will be true when the game is currently rendering to the back buffer.
     -- Obtain the local player entity..
-    local p = GetPlayerEntity();
-    if (p == nil) then
+    local player = GetPlayerEntity();
+    if (player == nil) then
         return;
     end
 
     -- Determine if the player is moving..
-    local x = p.Movement.LocalPosition.X;
-    local y = p.Movement.LocalPosition.Y;
-    local z = p.Movement.LocalPosition.Z;
+    local x = player.Movement.LocalPosition.X;
+    local y = player.Movement.LocalPosition.Y;
+    local z = player.Movement.LocalPosition.Z;
     local zoneId = getPlayerZoneIdFromMemory();
 
     local msg = string.format('%f,%f,%f,%d', player.Movement.LocalPosition.X, player.Movement.LocalPosition.Y, player.Movement.LocalPosition.Z, zoneId)
