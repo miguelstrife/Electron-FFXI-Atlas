@@ -1,4 +1,10 @@
 // import * as PIXI from './modules/pixi.min.js';
+    // Coordinate transform
+function gameToPixels(x, z) {
+    const px = ((x + 255) / 510) * 1024;
+    const py = ((255 - z) / 510) * 1024;
+    return { x: px, y: py };
+}
 
 (async () => {
     const app = new PIXI.Application();
@@ -18,19 +24,12 @@
     mapContainer.addChild(mapSprite);
     
     // Player dot
-    // const playerDot = new PIXI.Graphics();
-    // playerDot.beginFill(0x00ff88);
-    // playerDot.drawCircle(0, 0, 6);
-    // playerDot.endFill();
-    // playerDot.lineStyle(2, 0xffffff);
-    // app.stage.addChild(playerDot);
-    
-    // Coordinate transform
-    function gameToPixels(x, z) {
-      const px = ((x + 255) / 510) * 1024;
-      const py = ((255 - z) / 510) * 1024;
-      return { x: px, y: py };
-    }
+    const playerDot = new PIXI.Graphics()
+        .circle(50, 50, 6)
+        .stroke(0x00ff00)
+        .lineStyle(5)
+        .fill('red');
+    app.stage.addChild(playerDot);
     
     // Listen for Ashita UDP dat
     let currentZoneId = -1;
@@ -41,11 +40,11 @@
             console.warn(`Unknown zone ID: ${zoneId}`);
             return;
             }
-            const mapPath =  `assets/maps/${mapName}.png`;
+            const mapPath =  `../assets/maps/${mapName}.png`;
             mapSprite.texture = await PIXI.Assets.load(mapPath);
-            currentZone = zone;
+            currentZoneId = zoneId;
         }
         const { x: px, y: py } = gameToPixels(x, z);
-    //   playerDot.position.set(px, py);
+        playerDot.position.set(px, py);
     });
 })();

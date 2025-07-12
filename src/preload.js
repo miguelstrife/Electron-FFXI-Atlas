@@ -1,14 +1,13 @@
-const { contextBridge } = require('electron');
-const { EventEmitter } = require('events');
+const { contextBridge, ipcRenderer } = require('electron');
 const fs = require('fs');
 const path = require('path');
 
-const positionEmitter = new EventEmitter();
-global.sharedPositionEmitter = positionEmitter;
-const eventEmitter = new EventEmitter();
+// const positionEmitter = new EventEmitter();
+// global.sharedPositionEmitter = positionEmitter;
+// const eventEmitter = new EventEmitter();
 
 contextBridge.exposeInMainWorld('ffxiAtlas', {
-  onPositionUpdate: (callback) => positionEmitter.on('position', callback),
+  onPositionUpdate: (callback) => ipcRenderer.on('position', (event, data) => callback(data)),
   loadZones: () => {
     const filePath = path.join('./resources', 'zones.json');
     const content = fs.readFileSync(filePath, 'utf-8');
