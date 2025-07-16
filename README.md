@@ -9,7 +9,7 @@ FFXI Atlas is a cross-platform Electron app that displays zone maps from *Final 
 - 🧭 Real-time player position tracking (requires Ashita v4)
 - 🌍 Interactive, high-resolution maps for all FFXI zones
 - 🔍 Zoom, pan, and coordinate grid overlays
-- 🔄 Automatic zone detection (based on Ashita memory reading)
+- 🔄 Automatic zone detection (requires Ashita v4)
 - 💡 Lightweight communication bridge via UDP/WebSocket
 - ⚔️ Designed for adventurers, collectors, and explorers
 
@@ -21,8 +21,9 @@ FFXI Atlas is a cross-platform Electron app that displays zone maps from *Final 
 
 - [Ashita v4](https://ashita.atom0s.com/) installed and configured
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
-- FFXI installed via Square Enix or Steam.
-- 
+- [FFXI](http://www.playonline.com/ff11us/download/media/install_win.html) installed via Square Enix or Steam.
+- A map pack. [Remapster](https://github.com/AkadenTK/remapster_maps/releases) packs 1024 are recommended.
+  
 ### 1. Clone the Repository
 
 ```bash
@@ -30,8 +31,21 @@ git clone https://github.com/miguelstrife/electron-ffxi-atlas.git
 cd electron-ffxi-atlas.git
 ```
 
-### 2. Run application
+### 2. Install dependencies
 ```bash
-cd electron-ffxi-atlas.git
+cd electron-ffxi-atlas
+npm install
+```
+
+### 3. Run application
+```bash
 npm run start
 ```
+### 4. Add your map pack
+- Place your map pack inside ```assets\maps```. Naming should be in snake_case convention. 
+  
+### 5. Configure Ashita v4 plugin
+- Download Ashita v4
+- Create a folder named 'ffxiatlas' in your Ashita v4 addon directory, usually ```ashita-v4\addons\ffxiatlas\ffxiatlas.lua``` 
+- Copy ```ffxiatlas.lua``` from ```scripts\ashita\addon\ffxiatlas.lua```
+- In your Ashita load script, add ```/addon load ffxiatlas``` or type it in the chatbox once you character is loaded in FFXI.
