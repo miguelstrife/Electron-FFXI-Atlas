@@ -264,6 +264,10 @@ local function broadcastPlayerData()
     end
 
     local zoneId = getPlayerZoneIdFromMemory()
+    -- Get the Map ID value (zones with several maps)
+    local mapId = player.Session.MapId
+    print(string.format("[FFXIAtlas] Player is in zone %d, map %d", zoneId, mapId))
+
     local msg = string.format('%f,%f,%f,%d', player.Movement.LocalPosition.X, player.Movement.LocalPosition.Y, player.Movement.LocalPosition.Z, zoneId)
     
     -- Error handling in case the send fails
@@ -282,7 +286,7 @@ ashita.events.register('load', 'load_callback1', function ()
     -- repeats: -1 (repeat forever)
     -- repeatDelay: 0.25 (repeat every 0.25s)
     -- func: broadcastPlayerData (the function to call)
-    ashita.tasks.repeating(0.25, -1, 0.25, broadcastPlayerData)
+    ashita.tasks.repeating(0.05, -1, 0.05, broadcastPlayerData)
     print("[FFXIAtlas] Player position broadcaster task started.")
 end);
 
