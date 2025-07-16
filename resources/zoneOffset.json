@@ -3,1788 +3,1788 @@
     "mapName": "phanauet_channel",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "2": {
     "mapName": "carpenters_landing",
     "scale": 0.1,
     "offsetX": 136.0,
-    "offSetY": 108.0
+    "offsetY": 108.0
   },
   "3": {
     "mapName": "manaclipper",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "4": {
     "mapName": "bibiki_bay",
     "scale": 0.1,
     "offsetX": 83.769,
-    "offSetY": 183.96
+    "offsetY": 183.96
   },
   "5": {
     "mapName": "uleguerand_range",
     "scale": 0.1,
     "offsetX": 127.671,
-    "offSetY": 131.721
+    "offsetY": 131.721
   },
   "6": {
     "mapName": "bearclaw_pinnacle",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "7": {
     "mapName": "attohwa_chasm",
     "scale": 0.1,
     "offsetX": 133.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "8": {
     "mapName": "boneyard_gully",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "9": {
     "mapName": "pso_xja",
     "scale": 0.4,
     "offsetX": 24.036,
-    "offSetY": 248.071
+    "offsetY": 248.071
   },
   "10": {
     "mapName": "the_shrouded_maw",
     "scale": 0.1,
     "offsetX": 100.0,
-    "offSetY": 100.0
+    "offsetY": 100.0
   },
   "11": {
     "mapName": "oldton_movalpolos",
     "scale": 0.2,
     "offsetX": 143.861,
-    "offSetY": 152.0
+    "offsetY": 152.0
   },
   "12": {
     "mapName": "newton_movalpolos",
     "scale": 0.2,
     "offsetX": 123.682,
-    "offSetY": 136.011
+    "offsetY": 136.011
   },
   "13": {
     "mapName": "mine_shaft_2716",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "14": {
     "mapName": "hall_of_transference",
     "scale": 0.4,
     "offsetX": 231.797,
-    "offSetY": 23.639
+    "offsetY": 23.639
   },
   "15": {
     "mapName": "abyssea_konschtat",
     "scale": 0.1,
     "offsetX": 127.703,
-    "offSetY": 131.137
+    "offsetY": 131.137
   },
   "16": {
     "mapName": "promyvion_holla",
     "scale": 0.2,
     "offsetX": 143.906,
-    "offSetY": 132.354
+    "offsetY": 132.354
   },
   "17": {
     "mapName": "spire_of_holla",
     "scale": 1.0,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "18": {
     "mapName": "promyvion_dem",
     "scale": 0.2,
     "offsetX": 131.639,
-    "offSetY": 137.316
+    "offsetY": 137.316
   },
   "19": {
     "mapName": "spire_of_dem",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "20": {
     "mapName": "promyvion_mea",
     "scale": 0.2,
     "offsetX": 129.0,
-    "offSetY": 127.0
+    "offsetY": 127.0
   },
   "21": {
     "mapName": "spire_of_mea",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "22": {
     "mapName": "promyvion_vahzl",
     "scale": 0.2,
     "offsetX": 129.0,
-    "offSetY": 120.0
+    "offsetY": 120.0
   },
   "23": {
     "mapName": "spire_of_vahzl",
     "scale": 1.0,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "24": {
     "mapName": "lufaise_meadows",
     "scale": 0.1,
     "offsetX": 136.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "25": {
     "mapName": "misareaux_coast",
     "scale": 0.1,
     "offsetX": 116.051,
-    "offSetY": 136.076
+    "offsetY": 136.076
   },
   "26": {
     "mapName": "tavnazian_safehold",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "27": {
     "mapName": "phomiuna_aqueducts",
     "scale": 0.4,
     "offsetX": 56.0,
-    "offSetY": 56.0
+    "offsetY": 56.0
   },
   "28": {
     "mapName": "sacrarium",
     "scale": 0.4,
     "offsetX": 168.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "29": {
     "mapName": "riverne_site_b01",
     "scale": 0.1,
     "offsetX": 123.947,
-    "offSetY": 80.146
+    "offsetY": 80.146
   },
   "30": {
     "mapName": "riverne_site_a01",
     "scale": 0.1,
     "offsetX": 121.104,
-    "offSetY": 184.374
+    "offsetY": 184.374
   },
   "31": {
     "mapName": "monarch_linn",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "32": {
     "mapName": "sealion_s_den",
     "scale": 0.4,
     "offsetX": -121.0,
-    "offSetY": 407.0
+    "offsetY": 407.0
   },
   "33": {
     "mapName": "al_taieu",
     "scale": 0.1,
     "offsetX": 127.734,
-    "offSetY": 135.771
+    "offsetY": 135.771
   },
   "34": {
     "mapName": "grand_palace_of_hu_xzoi",
     "scale": 0.2,
     "offsetX": 212.727,
-    "offSetY": 212.514
+    "offsetY": 212.514
   },
   "35": {
     "mapName": "the_garden_of_ru_hmet",
     "scale": 0.2,
     "offsetX": 212.22,
-    "offSetY": 212.875
+    "offsetY": 212.875
   },
   "36": {
     "mapName": "empyreal_paradox",
     "scale": 0.1,
     "offsetX": 100.0,
-    "offSetY": 100.0
+    "offsetY": 100.0
   },
   "37": {
     "mapName": "temenos",
     "scale": 0.7,
     "offsetX": -125.0,
-    "offSetY": 427.0
+    "offsetY": 427.0
   },
   "38": {
     "mapName": "apollyon",
     "scale": 0.25,
     "offsetX": 3.0,
-    "offSetY": 3.0
+    "offsetY": 3.0
   },
   "39": {
     "mapName": "dynamis_valkurm",
     "scale": 0.1,
     "offsetX": 108.443,
-    "offSetY": 127.772
+    "offsetY": 127.772
   },
   "40": {
     "mapName": "dynamis_buburimu",
     "scale": 0.1,
     "offsetX": 127.557,
-    "offSetY": 120.165
+    "offsetY": 120.165
   },
   "41": {
     "mapName": "dynamis_qufim",
     "scale": 0.1,
     "offsetX": 128.013,
-    "offSetY": 127.633
+    "offsetY": 127.633
   },
   "42": {
     "mapName": "dynamis_tavnazia",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "43": {
     "mapName": "diorama_abdhaljs_ghelsba",
     "scale": 0.2,
     "offsetX": 136.063,
-    "offSetY": 168.0
+    "offsetY": 168.0
   },
   "44": {
     "mapName": "abdhaljs_isle_purgonorgo",
     "scale": 0.1,
     "offsetX": 71.877,
-    "offSetY": 172.503
+    "offsetY": 172.503
   },
   "45": {
     "mapName": "abyssea_tahrongi",
     "scale": 0.1,
     "offsetX": 127.393,
-    "offSetY": 123.937
+    "offsetY": 123.937
   },
   "46": {
     "mapName": "open_sea_route_to_al_zahbi",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "47": {
     "mapName": "open_sea_route_to_mhaura",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "48": {
     "mapName": "al_zahbi",
     "scale": 0.4,
     "offsetX": 136.0,
-    "offSetY": 135.5
+    "offsetY": 135.5
   },
   "49": {
     "mapName": "unused",
     "scale": 0.6,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "50": {
     "mapName": "aht_urhgan_whitegate",
     "scale": 0.4,
     "offsetX": 136.459,
-    "offSetY": 136.284
+    "offsetY": 136.284
   },
   "51": {
     "mapName": "wajaom_woodlands",
     "scale": 0.1,
     "offsetX": 132.0,
-    "offSetY": 140.241
+    "offsetY": 140.241
   },
   "52": {
     "mapName": "bhaflau_thickets",
     "scale": 0.1,
     "offsetX": 99.878,
-    "offSetY": 156.438
+    "offsetY": 156.438
   },
   "53": {
     "mapName": "nashmau",
     "scale": 0.4,
     "offsetX": 120.0,
-    "offSetY": 120.0
+    "offsetY": 120.0
   },
   "54": {
     "mapName": "arrapago_reef",
     "scale": 0.2,
     "offsetX": 39.0,
-    "offSetY": 177.0
+    "offsetY": 177.0
   },
   "55": {
     "mapName": "ilrusi_atoll",
     "scale": 0.2,
     "offsetX": 224.0,
-    "offSetY": 80.0
+    "offsetY": 80.0
   },
   "56": {
     "mapName": "periqia",
     "scale": 0.2,
     "offsetX": 176.552,
-    "offSetY": 120.45
+    "offsetY": 120.45
   },
   "57": {
     "mapName": "talacca_cove",
     "scale": 0.4,
     "offsetX": 127.0,
-    "offSetY": 60.0
+    "offsetY": 60.0
   },
   "58": {
     "mapName": "silver_sea_route_to_nashmau",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "59": {
     "mapName": "silver_sea_route_to_al_zahbi",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "60": {
     "mapName": "the_ashu_talif",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "61": {
     "mapName": "mount_zhayolm",
     "scale": 0.1,
     "offsetX": 111.904,
-    "offSetY": 128.423
+    "offsetY": 128.423
   },
   "62": {
     "mapName": "halvung",
     "scale": 0.2,
     "offsetX": 124.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "63": {
     "mapName": "lebros_cavern",
     "scale": 0.2,
     "offsetX": 168.0,
-    "offSetY": 216.0
+    "offsetY": 216.0
   },
   "64": {
     "mapName": "navukgo_execution_chamber",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "65": {
     "mapName": "mamook",
     "scale": 0.2,
     "offsetX": 124.393,
-    "offSetY": 96.0
+    "offsetY": 96.0
   },
   "66": {
     "mapName": "mamool_ja_training_grounds",
     "scale": 0.2,
     "offsetX": 184.538,
-    "offSetY": 56.23
+    "offsetY": 56.23
   },
   "67": {
     "mapName": "jade_sepulcher",
     "scale": 0.4,
     "offsetX": 4.2,
-    "offSetY": 48.369
+    "offsetY": 48.369
   },
   "68": {
     "mapName": "aydeewa_subterrane",
     "scale": 0.2,
     "offsetX": 55.885,
-    "offSetY": 208.27
+    "offsetY": 208.27
   },
   "69": {
     "mapName": "leujaoam_sanctum",
     "scale": 0.2,
     "offsetX": 184.018,
-    "offSetY": 71.924
+    "offsetY": 71.924
   },
   "70": {
     "mapName": "chocobo_circuit",
     "scale": 0.4,
     "offsetX": 328.054,
-    "offSetY": -80.118
+    "offsetY": -80.118
   },
   "71": {
     "mapName": "the_colosseum",
     "scale": 0.4,
     "offsetX": 339.64,
-    "offSetY": 128.629
+    "offsetY": 128.629
   },
   "72": {
     "mapName": "alzadaal_undersea_ruins",
     "scale": 0.2,
     "offsetX": 244.366,
-    "offSetY": 39.366
+    "offsetY": 39.366
   },
   "73": {
     "mapName": "zhayolm_remnants",
     "scale": 0.2,
     "offsetX": 51.962,
-    "offSetY": 51.923
+    "offsetY": 51.923
   },
   "74": {
     "mapName": "arrapago_remnants",
     "scale": 0.2,
     "offsetX": 51.928,
-    "offSetY": 52.181
+    "offsetY": 52.181
   },
   "75": {
     "mapName": "bhaflau_remnants",
     "scale": 0.2,
     "offsetX": 59.76,
-    "offSetY": 67.815
+    "offsetY": 67.815
   },
   "76": {
     "mapName": "silver_sea_remnants",
     "scale": 0.2,
     "offsetX": 59.718,
-    "offSetY": 60.094
+    "offsetY": 60.094
   },
   "77": {
     "mapName": "nyzul_isle",
     "scale": 0.2,
     "offsetX": 36.0,
-    "offSetY": 20.0
+    "offsetY": 20.0
   },
   "78": {
     "mapName": "hazhalm_testing_grounds",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "79": {
     "mapName": "caedarva_mire",
     "scale": 0.1,
     "offsetX": 123.735,
-    "offSetY": 95.709
+    "offsetY": 95.709
   },
   "80": {
     "mapName": "southern_san_d_oria_s",
     "scale": 0.4,
     "offsetX": 144.038,
-    "offSetY": 135.399
+    "offsetY": 135.399
   },
   "81": {
     "mapName": "east_ronfaure_s",
     "scale": 0.1,
     "offsetX": 100.154,
-    "offSetY": 123.423
+    "offsetY": 123.423
   },
   "82": {
     "mapName": "jugner_forest_s",
     "scale": 0.1,
     "offsetX": 132.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "83": {
     "mapName": "vunkerl_inlet_s",
     "scale": 0.1,
     "offsetX": 132.102,
-    "offSetY": 132.456
+    "offsetY": 132.456
   },
   "84": {
     "mapName": "batallia_downs_s",
     "scale": 0.1,
     "offsetX": 136.127,
-    "offSetY": 119.506
+    "offsetY": 119.506
   },
   "85": {
     "mapName": "la_vaule_s",
     "scale": 0.2,
     "offsetX": 119.911,
-    "offSetY": 103.076
+    "offsetY": 103.076
   },
   "86": {
     "mapName": "everbloom_hollow",
     "scale": 0.2,
     "offsetX": 184.252,
-    "offSetY": 200.41
+    "offsetY": 200.41
   },
   "87": {
     "mapName": "bastok_markets_s",
     "scale": 0.4,
     "offsetX": 212.0,
-    "offSetY": 104.0
+    "offsetY": 104.0
   },
   "88": {
     "mapName": "north_gustaberg_s",
     "scale": 0.1,
     "offsetX": 124.088,
-    "offSetY": 163.152
+    "offsetY": 163.152
   },
   "89": {
     "mapName": "grauberg_s",
     "scale": 0.1,
     "offsetX": 112.289,
-    "offSetY": 143.539
+    "offsetY": 143.539
   },
   "90": {
     "mapName": "pashhow_marshlands_s",
     "scale": 0.1,
     "offsetX": 129.0,
-    "offSetY": 131.0
+    "offsetY": 131.0
   },
   "91": {
     "mapName": "rolanberry_fields_s",
     "scale": 0.1,
     "offsetX": 139.836,
-    "offSetY": 131.342
+    "offsetY": 131.342
   },
   "92": {
     "mapName": "beadeaux_s",
     "scale": 0.2,
     "offsetX": 135.924,
-    "offSetY": 127.481
+    "offsetY": 127.481
   },
   "93": {
     "mapName": "ruhotz_silvermines",
     "scale": 0.2,
     "offsetX": 152.519,
-    "offSetY": 168.626
+    "offsetY": 168.626
   },
   "94": {
     "mapName": "windurst_waters_s",
     "scale": 0.4,
     "offsetX": 120.374,
-    "offSetY": 164.578
+    "offsetY": 164.578
   },
   "95": {
     "mapName": "west_sarutabaruta_s",
     "scale": 0.1,
     "offsetX": 127.962,
-    "offSetY": 131.353
+    "offsetY": 131.353
   },
   "96": {
     "mapName": "fort_karugo_narugo_s",
     "scale": 0.1,
     "offsetX": 124.084,
-    "offSetY": 144.191
+    "offsetY": 144.191
   },
   "97": {
     "mapName": "meriphataud_mountains_s",
     "scale": 0.1,
     "offsetX": 112.192,
-    "offSetY": 127.423
+    "offsetY": 127.423
   },
   "98": {
     "mapName": "sauromugue_champaign_s",
     "scale": 0.1,
     "offsetX": 132.279,
-    "offSetY": 126.899
+    "offsetY": 126.899
   },
   "99": {
     "mapName": "castle_oztroja_s",
     "scale": 0.2,
     "offsetX": 143.653,
-    "offSetY": 127.461
+    "offsetY": 127.461
   },
   "100": {
     "mapName": "west_ronfaure",
     "scale": 0.1,
     "offsetX": 155.94,
-    "offSetY": 123.797
+    "offsetY": 123.797
   },
   "101": {
     "mapName": "east_ronfaure",
     "scale": 0.1,
     "offsetX": 100.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "102": {
     "mapName": "la_theine_plateau",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "103": {
     "mapName": "valkurm_dunes",
     "scale": 0.1,
     "offsetX": 108.443,
-    "offSetY": 127.772
+    "offsetY": 127.772
   },
   "104": {
     "mapName": "jugner_forest",
     "scale": 0.1,
     "offsetX": 132.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "105": {
     "mapName": "batallia_downs",
     "scale": 0.1,
     "offsetX": 136.127,
-    "offSetY": 119.506
+    "offsetY": 119.506
   },
   "106": {
     "mapName": "north_gustaberg",
     "scale": 0.1,
     "offsetX": 124.278,
-    "offSetY": 163.456
+    "offsetY": 163.456
   },
   "107": {
     "mapName": "south_gustaberg",
     "scale": 0.1,
     "offsetX": 128.076,
-    "offSetY": 91.709
+    "offsetY": 91.709
   },
   "108": {
     "mapName": "konschtat_highlands",
     "scale": 0.1,
     "offsetX": 128.297,
-    "offSetY": 131.656
+    "offsetY": 131.656
   },
   "109": {
     "mapName": "pashhow_marshlands",
     "scale": 0.1,
     "offsetX": 129.0,
-    "offSetY": 131.0
+    "offsetY": 131.0
   },
   "110": {
     "mapName": "rolanberry_fields",
     "scale": 0.1,
     "offsetX": 142.0,
-    "offSetY": 131.0
+    "offsetY": 131.0
   },
   "111": {
     "mapName": "beaucedine_glacier",
     "scale": 0.1,
     "offsetX": 128.165,
-    "offSetY": 127.747
+    "offsetY": 127.747
   },
   "112": {
     "mapName": "xarcabard",
     "scale": 0.1,
     "offsetX": 108.214,
-    "offSetY": 119.914
+    "offsetY": 119.914
   },
   "113": {
     "mapName": "cape_teriggan",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "114": {
     "mapName": "eastern_altepa_desert",
     "scale": 0.1,
     "offsetX": 120.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "115": {
     "mapName": "west_sarutabaruta",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 132.0
+    "offsetY": 132.0
   },
   "116": {
     "mapName": "east_sarutabaruta",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "117": {
     "mapName": "tahrongi_canyon",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 125.0
+    "offsetY": 125.0
   },
   "118": {
     "mapName": "buburimu_peninsula",
     "scale": 0.1,
     "offsetX": 127.557,
-    "offSetY": 120.165
+    "offsetY": 120.165
   },
   "119": {
     "mapName": "meriphataud_mountains",
     "scale": 0.1,
     "offsetX": 113.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "120": {
     "mapName": "sauromugue_champaign",
     "scale": 0.1,
     "offsetX": 133.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "121": {
     "mapName": "the_sanctuary_of_zi_tah",
     "scale": 0.1,
     "offsetX": 125.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "122": {
     "mapName": "ro_maeve",
     "scale": 0.4,
     "offsetX": 127.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "123": {
     "mapName": "yuhtunga_jungle",
     "scale": 0.1,
     "offsetX": 135.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "124": {
     "mapName": "yhoator_jungle",
     "scale": 0.1,
     "offsetX": 129.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "125": {
     "mapName": "western_altepa_desert",
     "scale": 0.1,
     "offsetX": 140.0,
-    "offSetY": 117.0
+    "offsetY": 117.0
   },
   "126": {
     "mapName": "qufim_island",
     "scale": 0.1,
     "offsetX": 128.013,
-    "offSetY": 127.633
+    "offsetY": 127.633
   },
   "127": {
     "mapName": "behemoth_s_dominion",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "128": {
     "mapName": "valley_of_sorrows",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 127.0
+    "offsetY": 127.0
   },
   "129": {
     "mapName": "ghoyu_s_reverie",
     "scale": 0.2,
     "offsetX": 201.0,
-    "offSetY": 185.0
+    "offsetY": 185.0
   },
   "130": {
     "mapName": "ru_aun_gardens",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "131": {
     "mapName": "mordion_gaol",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "132": {
     "mapName": "abyssea_la_theine",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "133": {
     "mapName": "unused",
     "scale": 0.0,
     "offsetX": 0.0,
-    "offSetY": 0.0
+    "offsetY": 0.0
   },
   "134": {
     "mapName": "dynamis_beaucedine",
     "scale": 0.1,
     "offsetX": 128.165,
-    "offSetY": 127.899
+    "offsetY": 127.899
   },
   "135": {
     "mapName": "dynamis_xarcabard",
     "scale": 0.1,
     "offsetX": 108.214,
-    "offSetY": 119.914
+    "offsetY": 119.914
   },
   "136": {
     "mapName": "beaucedine_glacier_s",
     "scale": 0.1,
     "offsetX": 129.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "137": {
     "mapName": "xarcabard_s",
     "scale": 0.1,
     "offsetX": 108.214,
-    "offSetY": 119.914
+    "offsetY": 119.914
   },
   "138": {
     "mapName": "castle_zvahl_baileys_s",
     "scale": 0.2,
     "offsetX": 79.0,
-    "offSetY": 127.0
+    "offsetY": 127.0
   },
   "139": {
     "mapName": "horlais_peak",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "140": {
     "mapName": "ghelsba_outpost",
     "scale": 0.2,
     "offsetX": 135.0,
-    "offSetY": 168.0
+    "offsetY": 168.0
   },
   "141": {
     "mapName": "fort_ghelsba",
     "scale": 0.2,
     "offsetX": 120.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "142": {
     "mapName": "yughott_grotto",
     "scale": 0.2,
     "offsetX": 120.0,
-    "offSetY": 137.0
+    "offsetY": 137.0
   },
   "143": {
     "mapName": "palborough_mines",
     "scale": 0.2,
     "offsetX": 105.0,
-    "offSetY": 144.0
+    "offsetY": 144.0
   },
   "144": {
     "mapName": "waughroon_shrine",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "145": {
     "mapName": "giddeus",
     "scale": 0.2,
     "offsetX": 136.0,
-    "offSetY": 135.0
+    "offsetY": 135.0
   },
   "146": {
     "mapName": "balga_s_dais",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "147": {
     "mapName": "beadeaux",
     "scale": 0.2,
     "offsetX": 136.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "148": {
     "mapName": "qulun_dome",
     "scale": 0.2,
     "offsetX": 96.0,
-    "offSetY": 120.0
+    "offsetY": 120.0
   },
   "149": {
     "mapName": "davoi",
     "scale": 0.2,
     "offsetX": 119.911,
-    "offSetY": 103.076
+    "offsetY": 103.076
   },
   "150": {
     "mapName": "monastic_cavern",
     "scale": 0.2,
     "offsetX": 120.0,
-    "offSetY": 96.0
+    "offsetY": 96.0
   },
   "151": {
     "mapName": "castle_oztroja",
     "scale": 0.2,
     "offsetX": 145.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "152": {
     "mapName": "altar_room",
     "scale": 0.2,
     "offsetX": 183.0,
-    "offSetY": 138.0
+    "offsetY": 138.0
   },
   "153": {
     "mapName": "the_boyahda_tree",
     "scale": 0.4,
     "offsetX": 56.0,
-    "offSetY": 120.0
+    "offsetY": 120.0
   },
   "154": {
     "mapName": "dragon_s_aery",
     "scale": 0.4,
     "offsetX": 120.0,
-    "offSetY": 137.0
+    "offsetY": 137.0
   },
   "155": {
     "mapName": "castle_zvahl_keep_s",
     "scale": 0.2,
     "offsetX": 137.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "156": {
     "mapName": "throne_room_s",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "157": {
     "mapName": "middle_delkfutt_s_tower",
     "scale": 0.4,
     "offsetX": 120.0,
-    "offSetY": 137.0
+    "offsetY": 137.0
   },
   "158": {
     "mapName": "upper_delkfutt_s_tower",
     "scale": 0.4,
     "offsetX": 248.0,
-    "offSetY": 137.0
+    "offsetY": 137.0
   },
   "159": {
     "mapName": "temple_of_uggalepih",
     "scale": 0.4,
     "offsetX": 73.0,
-    "offSetY": 121.0
+    "offsetY": 121.0
   },
   "160": {
     "mapName": "den_of_rancor",
     "scale": 0.4,
     "offsetX": 105.0,
-    "offSetY": 80.0
+    "offsetY": 80.0
   },
   "161": {
     "mapName": "castle_zvahl_baileys",
     "scale": 0.2,
     "offsetX": 79.0,
-    "offSetY": 127.0
+    "offsetY": 127.0
   },
   "162": {
     "mapName": "castle_zvahl_keep",
     "scale": 0.2,
     "offsetX": 137.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "163": {
     "mapName": "sacrificial_chamber",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "164": {
     "mapName": "garlaige_citadel_s",
     "scale": 0.2,
     "offsetX": 168.0,
-    "offSetY": 137.0
+    "offsetY": 137.0
   },
   "165": {
     "mapName": "throne_room",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "166": {
     "mapName": "ranguemont_pass",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 121.0
+    "offsetY": 121.0
   },
   "167": {
     "mapName": "bostaunieux_oubliette",
     "scale": 0.4,
     "offsetX": 88.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "168": {
     "mapName": "chamber_of_oracles",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "169": {
     "mapName": "toraimarai_canal",
     "scale": 0.2,
     "offsetX": 160.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "170": {
     "mapName": "full_moon_fountain",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "171": {
     "mapName": "crawlers_nest_s",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "172": {
     "mapName": "zeruhn_mines",
     "scale": 0.2,
     "offsetX": 144.0,
-    "offSetY": 113.0
+    "offsetY": 113.0
   },
   "173": {
     "mapName": "korroloka_tunnel",
     "scale": 0.4,
     "offsetX": 50.0,
-    "offSetY": 169.0
+    "offsetY": 169.0
   },
   "174": {
     "mapName": "kuftal_tunnel",
     "scale": 0.4,
     "offsetX": 136.0,
-    "offSetY": 48.0
+    "offsetY": 48.0
   },
   "175": {
     "mapName": "the_eldieme_necropolis_s",
     "scale": 0.2,
     "offsetX": 81.0,
-    "offSetY": 130.0
+    "offsetY": 130.0
   },
   "176": {
     "mapName": "sea_serpent_grotto",
     "scale": 0.4,
     "offsetX": 121.0,
-    "offSetY": 188.0
+    "offsetY": 188.0
   },
   "177": {
     "mapName": "ve_lugannon_palace",
     "scale": 0.2,
     "offsetX": 129.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "178": {
     "mapName": "the_shrine_of_ru_avitau",
     "scale": 0.2,
     "offsetX": 129.0,
-    "offSetY": 145.0
+    "offsetY": 145.0
   },
   "179": {
     "mapName": "stellar_fulcrum",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "180": {
     "mapName": "la_loff_amphitheater",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "181": {
     "mapName": "the_celestial_nexus",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "182": {
     "mapName": "walk_of_echoes",
     "scale": 0.8,
     "offsetX": 468.0,
-    "offSetY": 39.0
+    "offsetY": 39.0
   },
   "183": {
     "mapName": "maquette_abdhaljs_legion",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "184": {
     "mapName": "lower_delkfutt_s_tower",
     "scale": 0.4,
     "offsetX": -57.0,
-    "offSetY": 137.0
+    "offsetY": 137.0
   },
   "185": {
     "mapName": "dynamis_san_d_oria",
     "scale": 0.4,
     "offsetX": 145.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "186": {
     "mapName": "dynamis_bastok",
     "scale": 0.4,
     "offsetX": 135.0,
-    "offSetY": 105.0
+    "offsetY": 105.0
   },
   "187": {
     "mapName": "dynamis_windurst",
     "scale": 0.4,
     "offsetX": 129.0,
-    "offSetY": 160.0
+    "offsetY": 160.0
   },
   "188": {
     "mapName": "dynamis_jeuno",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "189": {
     "mapName": "residential_area",
     "scale": 0.2,
     "offsetX": 72.239,
-    "offSetY": -3.699
+    "offsetY": -3.699
   },
   "190": {
     "mapName": "king_ranperre_s_tomb",
     "scale": 0.2,
     "offsetX": 136.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "191": {
     "mapName": "dangruf_wadi",
     "scale": 0.2,
     "offsetX": 176.0,
-    "offSetY": 160.0
+    "offsetY": 160.0
   },
   "192": {
     "mapName": "inner_horutoto_ruins",
     "scale": 0.2,
     "offsetX": 56.0,
-    "offSetY": 143.0
+    "offsetY": 143.0
   },
   "193": {
     "mapName": "ordelle_s_caves",
     "scale": 0.2,
     "offsetX": 136.0,
-    "offSetY": 168.0
+    "offsetY": 168.0
   },
   "194": {
     "mapName": "outer_horutoto_ruins",
     "scale": 0.2,
     "offsetX": 192.0,
-    "offSetY": 248.0
+    "offsetY": 248.0
   },
   "195": {
     "mapName": "the_eldieme_necropolis",
     "scale": 0.2,
     "offsetX": 81.0,
-    "offSetY": 130.0
+    "offsetY": 130.0
   },
   "196": {
     "mapName": "gusgen_mines",
     "scale": 0.2,
     "offsetX": 120.0,
-    "offSetY": 95.0
+    "offsetY": 95.0
   },
   "197": {
     "mapName": "crawlers_nest",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "198": {
     "mapName": "maze_of_shakhrami",
     "scale": 0.2,
     "offsetX": 122.0,
-    "offSetY": 114.0
+    "offsetY": 114.0
   },
   "199": {
     "mapName": "residential_area",
     "scale": 1.0,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "200": {
     "mapName": "garlaige_citadel",
     "scale": 0.2,
     "offsetX": 185.0,
-    "offSetY": 186.0
+    "offsetY": 186.0
   },
   "201": {
     "mapName": "cloister_of_gales",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "202": {
     "mapName": "cloister_of_storms",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "203": {
     "mapName": "cloister_of_frost",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "204": {
     "mapName": "fei_yin",
     "scale": 0.2,
     "offsetX": 130.0,
-    "offSetY": 138.0
+    "offsetY": 138.0
   },
   "205": {
     "mapName": "ifrit_s_cauldron",
     "scale": 0.4,
     "offsetX": 58.0,
-    "offSetY": 104.0
+    "offsetY": 104.0
   },
   "206": {
     "mapName": "qu_bia_arena",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "207": {
     "mapName": "cloister_of_flames",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "208": {
     "mapName": "quicksand_caves",
     "scale": 0.4,
     "offsetX": -184.0,
-    "offSetY": -72.0
+    "offsetY": -72.0
   },
   "209": {
     "mapName": "cloister_of_tremors",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "210": {
     "mapName": "gm_lobby",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "211": {
     "mapName": "cloister_of_tides",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "212": {
     "mapName": "gustav_tunnel",
     "scale": 0.2,
     "offsetX": 120.0,
-    "offSetY": 120.0
+    "offsetY": 120.0
   },
   "213": {
     "mapName": "labyrinth_of_onzozo",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 120.0
+    "offsetY": 120.0
   },
   "214": {
     "mapName": "residential_area",
     "scale": 1.0,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "215": {
     "mapName": "abyssea_attohwa",
     "scale": 0.1,
     "offsetX": 133.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "216": {
     "mapName": "abyssea_misareaux",
     "scale": 0.1,
     "offsetX": 116.051,
-    "offSetY": 136.076
+    "offsetY": 136.076
   },
   "217": {
     "mapName": "abyssea_vunkerl",
     "scale": 0.1,
     "offsetX": 132.102,
-    "offSetY": 132.456
+    "offsetY": 132.456
   },
   "218": {
     "mapName": "abyssea_altepa",
     "scale": 0.1,
     "offsetX": 140.389,
-    "offSetY": 115.575
+    "offsetY": 115.575
   },
   "219": {
     "mapName": "residential_area",
     "scale": 1.0,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "220": {
     "mapName": "ship_bound_for_selbina",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "221": {
     "mapName": "ship_bound_for_mhaura",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "222": {
     "mapName": "provenance",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "223": {
     "mapName": "san_d_oria_jeuno_airship",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "224": {
     "mapName": "bastok_jeuno_airship",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "225": {
     "mapName": "windurst_jeuno_airship",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "226": {
     "mapName": "kazham_jeuno_airship",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "227": {
     "mapName": "ship_bound_for_selbina",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "228": {
     "mapName": "ship_bound_for_mhaura",
     "scale": 3.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "229": {
     "mapName": "unused",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "230": {
     "mapName": "southern_san_d_oria",
     "scale": 0.4,
     "offsetX": 145.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "231": {
     "mapName": "northern_san_d_oria",
     "scale": 0.4,
     "offsetX": 152.0,
-    "offSetY": 153.0
+    "offsetY": 153.0
   },
   "232": {
     "mapName": "port_san_d_oria",
     "scale": 0.4,
     "offsetX": 136.0,
-    "offSetY": 104.0
+    "offsetY": 104.0
   },
   "233": {
     "mapName": "chateau_d_oraguille",
     "scale": 0.4,
     "offsetX": 136.0,
-    "offSetY": 145.0
+    "offsetY": 145.0
   },
   "234": {
     "mapName": "bastok_mines",
     "scale": 0.4,
     "offsetX": 135.962,
-    "offSetY": 103.917
+    "offsetY": 103.917
   },
   "235": {
     "mapName": "bastok_markets",
     "scale": 0.4,
     "offsetX": 212.0,
-    "offSetY": 104.0
+    "offsetY": 104.0
   },
   "236": {
     "mapName": "port_bastok",
     "scale": 0.4,
     "offsetX": 136.137,
-    "offSetY": 104.048
+    "offsetY": 104.048
   },
   "237": {
     "mapName": "metalworks",
     "scale": 0.4,
     "offsetX": 129.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "238": {
     "mapName": "windurst_waters",
     "scale": 0.4,
     "offsetX": 121.0,
-    "offSetY": 164.0
+    "offsetY": 164.0
   },
   "239": {
     "mapName": "windurst_walls",
     "scale": 0.4,
     "offsetX": 129.0,
-    "offSetY": 160.0
+    "offsetY": 160.0
   },
   "240": {
     "mapName": "port_windurst",
     "scale": 0.4,
     "offsetX": 120.0,
-    "offSetY": 152.0
+    "offsetY": 152.0
   },
   "241": {
     "mapName": "windurst_woods",
     "scale": 0.4,
     "offsetX": 129.0,
-    "offSetY": 145.0
+    "offsetY": 145.0
   },
   "242": {
     "mapName": "heavens_tower",
     "scale": 1.1,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "243": {
     "mapName": "ru_lude_gardens",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "244": {
     "mapName": "upper_jeuno",
     "scale": 0.4,
     "offsetX": 136.0,
-    "offSetY": 153.0
+    "offsetY": 153.0
   },
   "245": {
     "mapName": "lower_jeuno",
     "scale": 0.4,
     "offsetX": 145.0,
-    "offSetY": 104.0
+    "offsetY": 104.0
   },
   "246": {
     "mapName": "port_jeuno",
     "scale": 0.4,
     "offsetX": 151.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "247": {
     "mapName": "rabao",
     "scale": 0.4,
     "offsetX": 112.0,
-    "offSetY": 138.0
+    "offsetY": 138.0
   },
   "248": {
     "mapName": "selbina",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 144.0
+    "offsetY": 144.0
   },
   "249": {
     "mapName": "mhaura",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 161.0
+    "offsetY": 161.0
   },
   "250": {
     "mapName": "kazham",
     "scale": 0.4,
     "offsetX": 121.0,
-    "offSetY": 106.0
+    "offsetY": 106.0
   },
   "251": {
     "mapName": "hall_of_the_gods",
     "scale": 0.4,
     "offsetX": 127.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "252": {
     "mapName": "norg",
     "scale": 0.4,
     "offsetX": 137.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "253": {
     "mapName": "abyssea_uleguerand",
     "scale": 0.1,
     "offsetX": 129.0,
-    "offSetY": 131.0
+    "offsetY": 131.0
   },
   "254": {
     "mapName": "abyssea_grauberg",
     "scale": 0.1,
     "offsetX": 112.528,
-    "offSetY": 144.409
+    "offsetY": 144.409
   },
   "255": {
     "mapName": "abyssea_empyreal_paradox",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "256": {
     "mapName": "western_adoulin",
     "scale": 0.4,
     "offsetX": 120.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "257": {
     "mapName": "eastern_adoulin",
     "scale": 0.4,
     "offsetX": 140.0,
-    "offSetY": 123.0
+    "offsetY": 123.0
   },
   "258": {
     "mapName": "rala_waterways",
     "scale": 0.2,
     "offsetX": 155.769,
-    "offSetY": 105.664
+    "offsetY": 105.664
   },
   "259": {
     "mapName": "rala_waterways_u",
     "scale": 0.4,
     "offsetX": 324.172,
-    "offSetY": 136.119
+    "offsetY": 136.119
   },
   "260": {
     "mapName": "yahse_hunting_grounds",
     "scale": 0.1,
     "offsetX": 139.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "261": {
     "mapName": "ceizak_battlegrounds",
     "scale": 0.1,
     "offsetX": 132.154,
-    "offSetY": 127.576
+    "offsetY": 127.576
   },
   "262": {
     "mapName": "foret_de_hennetiel",
     "scale": 0.1,
     "offsetX": 116.0,
-    "offSetY": 133.0
+    "offsetY": 133.0
   },
   "263": {
     "mapName": "yorcia_weald",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 137.5
+    "offsetY": 137.5
   },
   "264": {
     "mapName": "yorcia_weald_u",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 137.5
+    "offsetY": 137.5
   },
   "265": {
     "mapName": "morimar_basalt_fields",
     "scale": 0.1,
     "offsetX": 127.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "266": {
     "mapName": "marjami_ravine",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 142.0
+    "offsetY": 142.0
   },
   "267": {
     "mapName": "kamihr_drifts",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 135.0
+    "offsetY": 135.0
   },
   "268": {
     "mapName": "sih_gates",
     "scale": 0.2,
     "offsetX": 159.0,
-    "offSetY": 84.0
+    "offsetY": 84.0
   },
   "269": {
     "mapName": "moh_gates",
     "scale": 0.2,
     "offsetX": 91.0,
-    "offSetY": 96.0
+    "offsetY": 96.0
   },
   "270": {
     "mapName": "cirdas_caverns",
     "scale": 0.2,
     "offsetX": 111.076,
-    "offSetY": 156.299
+    "offsetY": 156.299
   },
   "271": {
     "mapName": "cirdas_caverns_u",
     "scale": 0.2,
     "offsetX": 140.4,
-    "offSetY": 208.3
+    "offsetY": 208.3
   },
   "272": {
     "mapName": "dho_gates",
     "scale": 0.2,
     "offsetX": 168.0,
-    "offSetY": 167.0
+    "offsetY": 167.0
   },
   "273": {
     "mapName": "woh_gates",
     "scale": 0.2,
     "offsetX": 76.0,
-    "offSetY": 168.0
+    "offsetY": 168.0
   },
   "274": {
     "mapName": "outer_ra_kaznar",
     "scale": 0.2,
     "offsetX": 232.197,
-    "offSetY": 104.241
+    "offsetY": 104.241
   },
   "275": {
     "mapName": "outer_ra_kaznar_u",
     "scale": 0.2,
     "offsetX": 232.197,
-    "offSetY": 104.241
+    "offsetY": 104.241
   },
   "276": {
     "mapName": "ra_kaznar_inner_court",
     "scale": 0.2,
     "offsetX": 238.466,
-    "offSetY": 115.205
+    "offsetY": 115.205
   },
   "277": {
     "mapName": "ra_kaznar_turris",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "278": {
     "mapName": "unused",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "279": {
     "mapName": "walk_of_echoes",
     "scale": 0.8,
     "offsetX": 468.0,
-    "offSetY": 39.0
+    "offsetY": 39.0
   },
   "280": {
     "mapName": "mog_garden",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "281": {
     "mapName": "leafallia",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 131.0
+    "offsetY": 131.0
   },
   "282": {
     "mapName": "mount_kamihr",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "283": {
     "mapName": "silver_knife",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 0.0
+    "offsetY": 0.0
   },
   "284": {
     "mapName": "celennia_memorial_library",
     "scale": 0.0,
     "offsetX": 0.0,
-    "offSetY": 0.0
+    "offsetY": 0.0
   },
   "285": {
     "mapName": "feretory",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 0.0
+    "offsetY": 0.0
   },
   "286": {
     "mapName": "unused",
     "scale": 0.0,
     "offsetX": 0.0,
-    "offSetY": 0.0
+    "offsetY": 0.0
   },
   "287": {
     "mapName": "maquette_abdhaljs_legion",
     "scale": 0.2,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "288": {
     "mapName": "escha_zi_tah",
     "scale": 0.1,
     "offsetX": 123.845,
-    "offSetY": 135.808
+    "offsetY": 135.808
   },
   "289": {
     "mapName": "escha_ru_aun",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 124.0
+    "offsetY": 124.0
   },
   "290": {
     "mapName": "desuetia_empyreal_paradox",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "291": {
     "mapName": "reisenjima",
     "scale": 0.1,
     "offsetX": 148.087,
-    "offSetY": 142.642
+    "offsetY": 142.642
   },
   "292": {
     "mapName": "reisenjima_henge",
     "scale": 0.0,
     "offsetX": 0.0,
-    "offSetY": 0.0
+    "offsetY": 0.0
   },
   "293": {
     "mapName": "reisenjima_sanctorium",
     "scale": 0.1,
     "offsetX": 128.0,
-    "offSetY": 128.0
+    "offsetY": 128.0
   },
   "294": {
     "mapName": "dynamis_san_d_oria_d",
     "scale": 0.4,
     "offsetX": 145.0,
-    "offSetY": 136.0
+    "offsetY": 136.0
   },
   "295": {
     "mapName": "dynamis_bastok_d",
     "scale": 0.4,
     "offsetX": 135.0,
-    "offSetY": 105.0
+    "offsetY": 105.0
   },
   "296": {
     "mapName": "dynamis_windurst_d",
     "scale": 0.4,
     "offsetX": 129.0,
-    "offSetY": 160.0
+    "offsetY": 160.0
   },
   "297": {
     "mapName": "dynamis_jeuno_d",
     "scale": 0.4,
     "offsetX": 128.0,
-    "offSetY": 129.0
+    "offsetY": 129.0
   },
   "298": {
     "mapName": "walk_of_echoes",
     "scale": 0.8,
     "offsetX": 468.0,
-    "offSetY": 39.0
+    "offsetY": 39.0
   }
 }
