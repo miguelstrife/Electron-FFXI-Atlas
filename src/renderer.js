@@ -3,6 +3,7 @@ const PlayerNavigatorInit = { X: 512, Y: 512 };
 const No_Map = '../assets/maps/no_map.png';
 let isTrackingEnabled = true;
 let zones = {}; // Will be loaded from file
+let playerState = { lastX: 0, lastY: 0 };
 
 // --- PIXI App Setup ---
 const app = new PIXI.Application();
@@ -64,6 +65,27 @@ function updatePlayerDataUI(data) {
     playerDataZoneName.textContent = zone ? zone.mapName.replace(/_/g, ' ') : 'Unknown';
     playerDataMapId.textContent = data.mapId || 'N/A';
     playerDataCoords.textContent = data.x ? `${data.x.toFixed(2)}, ${data.y.toFixed(2)}, ${data.z.toFixed(2)}` : 'N/A';
+}
+
+/**
+ * Updates the player rotation (heading position) on the UI.
+ * @param {object} position2d - The player position object {x, y}
+ * @param {object} playerNavigator - The player navigator sprite.
+ */
+function calculateHeadingRotation(position2d, playerNavigator) {
+    const dx = position2d.x - playerState.lastX;
+    const dy = position2d.y - playerState.lastY;
+
+    // Only update heading if the player has moved a meaningful amount
+    if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        // Calculate the angle of movement and rotate the navigator
+        // The PI/2 offset aligns the "up" pointing sprite with the direction of movement
+        playerNavigator.rotation = Math.atan2(dy, dx) + (Math.PI / 2);
+    }
+    
+    // Update the last known position for the next frame's calculation
+    playerState.lastX = position2d.x;
+    playerState.lastY = position2d.y;
 }
 
 /**
@@ -168,6 +190,7 @@ async function initialize() {
         // Update UI and player navigator position
         updatePlayerDataUI({ x, y, z, zoneId, mapId });
         const position2d = gameToPixels(x, y, zone);
+        calculateHeadingRotation(position2d, playerNavigator);
         playerNavigator.position.set(position2d.x, position2d.y);
     });
 }
