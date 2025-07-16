@@ -3,13 +3,12 @@ const PlayerDotInit = { X: 512, Y: 512 };
 const No_Map = '../assets/maps/no_map.png';
 var Player = { X: 512, Y: 512 , Z: 0, ZoneId: 0, ZoneName: 'Unknown' };
 
-function gameToPixels(x, z, areaType, offsetX, offsetY) {
-    const positionX2d = (x * (areaType / 2)) + (offsetX * 2);
-    const positionY2d = (z * -1 *((areaType / 2 )) + (offsetY * 2));
-    // const px = ((x + 255) / 510) * 1024;
-    // const py = ((255 - z) / 510) * 1024;
-    // return { x: px, y: py };
-    return { x: positionX2d, y: positionY2d };
+function gameToPixels(x, y, areaType, offsetX, offsetY) {
+    // Convert game coordinates to 2D pixel coordinates 
+    // areaType is the scale factor for the map
+    const posX = 2 * (offsetX + areaType * x);
+    const posY = 2 * (offsetY - areaType * y);
+    return { x: posX * 2, y: posY * 2 };
 }
 
 function getPlayerData() {
@@ -20,9 +19,6 @@ function getPlayerData() {
     const app = new PIXI.Application();
     await app.init({ background: '#1099bb', width: 1024, height: 1024 });
     document.getElementById('map-container').appendChild(app.canvas);
-    // document.body.appendChild(app.canvas);
-
-    // Create graphics context
     
     // Create a container for the map
     const mapContainer = new PIXI.Container();
@@ -54,7 +50,7 @@ function getPlayerData() {
 
     // mapContainer.addChild(playerNavigator);
     
-    // Listen for Ashita UDP dat
+    // Listen for Ashita event message
     let currentZoneId = -1;
     window.ffxiAtlas.onPositionUpdate(async ({ x, y, z, zoneId }) => {
         const currentZone = zones[zoneId];
@@ -72,13 +68,14 @@ function getPlayerData() {
             currentZoneId = zoneId;
         }
 
-        const position2d = gameToPixels(x, z, currentZone.scale, currentZone.offsetX, currentZone.offSetY);
-        // const { x: px, y: py } = gameToPixels(x, y);
-        console.log(`Previous Position: x=${playerNavigator.position.x}, y=${playerNavigator.position.y}, zoneId=${zoneId}`);
-        // Update player dot position
+        const position2d = gameToPixels(x, y, currentZone.scale, currentZone.offsetX, currentZone.offSetY);
+        // console.log(`Previous Position: x=${playerNavigator.position.x}, y=${playerNavigator.position.y}, zoneId=${zoneId}`);
+        
+        // Update player navigator position
+        // TODO: Rotate the player navigator based on direction
         playerNavigator.position = { x: position2d.x, y: position2d.y};
         Player = { X: position2d.x, Y: position2d.y, Z: z, ZoneId: zoneId, ZoneName: currentZone.mapName };
         document.getElementById('player-data').innerText = getPlayerData();
-        console.log(`Player position updated: x=${playerNavigator.position.x}, y=${playerNavigator.position.y}, zoneId=${zoneId}`);
+        // console.log(`Player position updated: x=${playerNavigator.position.x}, y=${playerNavigator.position.y}, zoneId=${zoneId}`);
     });
 })();

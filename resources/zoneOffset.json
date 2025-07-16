@@ -1555,55 +1555,55 @@
   },
   "260": {
     "mapName": "yahse_hunting_grounds",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 139.0,
+    "offSetY": 124.0
   },
   "261": {
     "mapName": "ceizak_battlegrounds",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 132.154,
+    "offSetY": 127.576
   },
   "262": {
     "mapName": "foret_de_hennetiel",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 116.0,
+    "offSetY": 133.0
   },
   "263": {
     "mapName": "yorcia_weald",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 128.0,
+    "offSetY": 137.5
   },
   "264": {
     "mapName": "yorcia_weald_u",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 128.0,
+    "offSetY": 137.5
   },
   "265": {
     "mapName": "morimar_basalt_fields",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 127.0,
+    "offSetY": 129.0
   },
   "266": {
     "mapName": "marjami_ravine",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 128.0,
+    "offSetY": 142.0
   },
   "267": {
     "mapName": "kamihr_drifts",
-    "scale": 0.0,
-    "offsetX": 0.0,
-    "offSetY": 0.0
+    "scale": 0.1,
+    "offsetX": 128.0,
+    "offSetY": 135.0
   },
   "268": {
     "mapName": "sih_gates",
-    "scale": 0.0,
+    "scale": 0.2,
     "offsetX": 0.0,
     "offSetY": 0.0
   },
