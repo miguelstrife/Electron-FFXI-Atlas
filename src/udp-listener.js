@@ -19,7 +19,7 @@ socket.on('message', (msg, rinfo) => {
     // emitter.emit('position', { x: parseFloat(x), z: parseFloat(z), zoneId });
     // eventEmitter.emit('position', { x: parseFloat(x), z: parseFloat(z), zoneId });
     // For debugging purposes, log the received position
-    console.log(`Received position update: x=${x}, y=${y}, z=${z}, zoneId=${zoneId} from ${rinfo.address}:${rinfo.port}`);
+    // console.log(`Received position update: x=${x}, y=${y}, z=${z}, zoneId=${zoneId} from ${rinfo.address}:${rinfo.port}`);
 });
 
 socket.on('error', (err) => {

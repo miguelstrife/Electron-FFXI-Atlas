@@ -9,7 +9,7 @@ const path = require('path');
 contextBridge.exposeInMainWorld('ffxiAtlas', {
   onPositionUpdate: (callback) => ipcRenderer.on('position', (event, data) => callback(data)),
   loadZones: () => {
-    const filePath = path.join('./resources', 'zones.json');
+    const filePath = path.join('./resources', 'zoneOffset.json');
     const content = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(content);
   }
