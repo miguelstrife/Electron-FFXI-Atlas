@@ -1,81 +1,176 @@
-
-const PlayerDotInit = { X: 512, Y: 512 };
+// --- Constants and State ---
+const PlayerNavigatorInit = { X: 512, Y: 512 };
 const No_Map = '../assets/maps/no_map.png';
-var Player = { X: 512, Y: 512 , Z: 0, ZoneId: 0, ZoneName: 'Unknown' };
+let isTrackingEnabled = true;
+let zones = {}; // Will be loaded from file
 
-function gameToPixels(x, y, areaType, offsetX, offsetY) {
-    // Convert game coordinates to 2D pixel coordinates 
-    // areaType is the scale factor for the map
-    const posX = 2 * (offsetX + areaType * x);
-    const posY = 2 * (offsetY - areaType * y);
+// --- PIXI App Setup ---
+const app = new PIXI.Application();
+const mapContainer = new PIXI.Container();
+const playerContainer = new PIXI.Container();
+let mapSprite;
+let playerNavigator;
+
+// --- UI Element References ---
+const trackingSwitch = document.getElementById('tracking-mode-switch');
+const zoneSearchInput = document.getElementById('zone-search-input');
+const zoneDatalist = document.getElementById('zone-datalist-options');
+const playerDataZoneName = document.getElementById('player-data-zone-name');
+const playerDataMapId = document.getElementById('player-data-map-id');
+const playerDataCoords = document.getElementById('player-data-coords');
+
+
+// --- Functions ---
+
+/**
+ * Converts FFXI game coordinates to pixel coordinates for the map.
+ * @param {number} x - The player's X coordinate.
+ * @param {number} y - The player's Y coordinate.
+ * @param {object} zone - The zone object containing scale and offset data.
+ * @returns {{x: number, y: number}} Pixel coordinates.
+ */
+function gameToPixels(x, y, zone) {
+    if (!zone) return { x: 0, y: 0 };
+    const posX = 2 * (zone.offsetX + zone.scale * x);
+    const posY = 2 * (zone.offsetY - zone.scale * y);
     return { x: posX * 2, y: posY * 2 };
 }
 
-function getPlayerData() {
-    return 'Player Data: ' + JSON.stringify(Player);
+/**
+ * Loads a map texture and displays it on the canvas.
+ * @param {number} zoneId - The ID of the zone to load.
+ * @param {number} mapId - The ID of the map to load.
+ */
+async function loadMap(zoneId, mapId) {
+    // const zone = Object.values(zones).find(z => z.mapId === mapId);
+    const zone = zones[zoneId];
+    const mapName = zone ? zone.mapName : 'no_map';
+    const mapPath = `../assets/maps/${mapName}.png`;
+
+    try {
+        mapSprite.texture = await PIXI.Assets.load(mapPath);
+    } catch (error) {
+        console.error(`Failed to load map: ${mapPath}`, error);
+        mapSprite.texture = await PIXI.Assets.load(No_Map);
+    }
 }
 
-(async () => {
-    const app = new PIXI.Application();
-    await app.init({ background: '#1099bb', width: 1024, height: 1024 });
-    document.getElementById('map-container').appendChild(app.canvas);
-    
-    // Create a container for the map
-    const mapContainer = new PIXI.Container();
+/**
+ * Updates the player data display on the UI.
+ * @param {object} data - The player data object {x, y, z, zoneId, mapId}.
+ */
+function updatePlayerDataUI(data) {
+    const zone = zones[data.zoneId];
+    playerDataZoneName.textContent = zone ? zone.mapName.replace(/_/g, ' ') : 'Unknown';
+    playerDataMapId.textContent = data.mapId || 'N/A';
+    playerDataCoords.textContent = data.x ? `${data.x.toFixed(2)}, ${data.y.toFixed(2)}, ${data.z.toFixed(2)}` : 'N/A';
+}
 
+/**
+ * Initializes the entire application.
+ */
+async function initialize() {
+    // Init PIXI
+    await app.init({ background: '#343a40', width: 1024, height: 1024 });
+    document.getElementById('map-container').appendChild(app.canvas);
     app.stage.addChild(mapContainer);
-    // Move the container to the center
     mapContainer.x = 0;
     mapContainer.y = 0;
-    
-    // Load zones dictionary
-    const zones = window.ffxiAtlas.loadZones();
-    
-    // Load the map
+
+    // Enable sorting on the container to respect zIndex.
+    mapContainer.sortableChildren = true;
+
+    // Load zone data and populate search
+    zones = window.ffxiAtlas.loadZones();
+    Object.entries(zones).forEach(([zoneId, zone]) => {
+        const option = document.createElement('option');
+        // Use a more readable format for the display value
+        option.value = zone.mapName.replace(/_/g, ' ');
+        // Store the mapId in a data attribute for easy retrieval
+        option.dataset.zoneId = zoneId;
+        zoneDatalist.appendChild(option);
+    });
+
+    // Load map and player assets
     const mapTexture = await PIXI.Assets.load(No_Map);
-    const mapSprite = new PIXI.Sprite(mapTexture);
+    mapSprite = new PIXI.Sprite(mapTexture);
+    mapSprite.zIndex = 0; // Set map to be at the bottom layer
     mapContainer.addChild(mapSprite);
 
-    // Player navigator
     const navigatorTexture = await PIXI.Assets.load('../assets/compass/playerNavigator.png');
-    const playerNavigator = new PIXI.Sprite(navigatorTexture);
-    const playerContainer = new PIXI.Container();
+    playerNavigator = new PIXI.Sprite(navigatorTexture);
     mapContainer.addChild(playerContainer);
     playerContainer.x = 0;
     playerContainer.y = 0;
     playerContainer.addChild(playerNavigator);
     playerNavigator.anchor.set(0.5, 0.5);
-    playerNavigator.position.set(PlayerDotInit.X, PlayerDotInit.Y);
+    playerNavigator.position.set(PlayerNavigatorInit.X, PlayerNavigatorInit.Y);
     playerNavigator.scale.set(0.5, 0.5);
-
-    // mapContainer.addChild(playerNavigator);
+    playerNavigator.visible = true; // Initially visible
+    playerNavigator.zIndex = 1;
     
-    // Listen for Ashita event message
     let currentZoneId = -1;
+    // --- Event Listeners ---
+
+    // Listener for the tracking mode switch
+    trackingSwitch.addEventListener('change', (event) => {
+        isTrackingEnabled = event.target.checked;
+        playerNavigator.visible = isTrackingEnabled;
+        if (!isTrackingEnabled) {
+            // Clear player data when tracking is off
+            updatePlayerDataUI({});
+        }
+    });
+
+    // Listener for the zone search input
+    zoneSearchInput.addEventListener('input', (event) => {
+        const selectedValue = event.target.value;
+        const selectedOption = Array.from(zoneDatalist.options).find(opt => opt.value === selectedValue);
+        
+        if (selectedOption) {
+            const zoneId = parseInt(selectedOption.dataset.zoneId, 10);
+            const mapId = zoneId; // TODO>: Fix for zones with multiple maps
+            // Manually load the selected map and disable tracking
+            trackingSwitch.checked = false;
+            isTrackingEnabled = false;
+            playerNavigator.visible = false;
+            loadMap(zoneId);
+            updatePlayerDataUI({ mapId: mapId, zoneId: zoneId});
+            currentZoneId = zoneId;
+        }
+    });
+
+    // Listener for position updates from the main process
     window.ffxiAtlas.onPositionUpdate(async ({ x, y, z, zoneId }) => {
-        const currentZone = zones[zoneId];
-    
-        if (!currentZone) {
+        if (!isTrackingEnabled) {
+            return; // Do nothing if tracking is disabled
+        }
+
+        const zone = zones[zoneId];
+        if (!zone) {
             console.warn(`Unknown zone ID: ${zoneId}`);
-            mapSprite.texture = await PIXI.Assets.load(No_Map);
+            if (currentZoneId !== -1) {
+                mapSprite.texture = await PIXI.Assets.load(No_Map);
+                currentZoneId = -1;
+            }
             return;
         }
-        // If the zone has changed, update the map
+
+        // If the map has changed, update the map texture
         if (zoneId !== currentZoneId) {
-            const mapName = currentZone.mapName;
-            const mapPath =  `../assets/maps/${mapName}.png`;
-            mapSprite.texture = await PIXI.Assets.load(mapPath);
+            await loadMap(zoneId);
             currentZoneId = zoneId;
         }
 
-        const position2d = gameToPixels(x, y, currentZone.scale, currentZone.offsetX, currentZone.offSetY);
-        // console.log(`Previous Position: x=${playerNavigator.position.x}, y=${playerNavigator.position.y}, zoneId=${zoneId}`);
-        
-        // Update player navigator position
-        // TODO: Rotate the player navigator based on direction
-        playerNavigator.position = { x: position2d.x, y: position2d.y};
-        Player = { X: position2d.x, Y: position2d.y, Z: z, ZoneId: zoneId, ZoneName: currentZone.mapName };
-        document.getElementById('player-data').innerText = getPlayerData();
-        // console.log(`Player position updated: x=${playerNavigator.position.x}, y=${playerNavigator.position.y}, zoneId=${zoneId}`);
+        // TODO: Zones with multiple maps should handle mapId differently
+        let mapId = zoneId
+
+        // Update UI and player navigator position
+        updatePlayerDataUI({ x, y, z, zoneId, mapId });
+        const position2d = gameToPixels(x, y, zone);
+        playerNavigator.position.set(position2d.x, position2d.y);
     });
-})();
+}
+
+// --- Start the App ---
+initialize();
