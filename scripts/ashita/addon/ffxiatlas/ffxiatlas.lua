@@ -256,9 +256,34 @@ local function getPlayerZoneIdFromMemory()
     return partyMgr:GetMemberZone(0) or 0
 end
 
+-- This function contains the logic to broadcast the player's data.
+local function broadcastPlayerData()
+    local player = GetPlayerEntity()
+    if (player == nil) then
+        return
+    end
+
+    local zoneId = getPlayerZoneIdFromMemory()
+    local msg = string.format('%f,%f,%f,%d', player.Movement.LocalPosition.X, player.Movement.LocalPosition.Y, player.Movement.LocalPosition.Z, zoneId)
+    
+    -- Error handling in case the send fails
+    if (client) then
+        client:send(msg)
+    end
+end
+
 ashita.events.register('load', 'load_callback1', function ()
     print("[FFXIAtlas] 'load' event was called.");
     client:setpeername("127.0.0.1", 12345)
+
+    -- Creates a task that repeats indefinitely every 0.25 seconds.
+    -- Parameters for repeating: delay, repeats, repeatDelay, func
+    -- delay: 0.25 (start after 0.25s)
+    -- repeats: -1 (repeat forever)
+    -- repeatDelay: 0.25 (repeat every 0.25s)
+    -- func: broadcastPlayerData (the function to call)
+    ashita.tasks.repeating(0.25, -1, 0.25, broadcastPlayerData)
+    print("[FFXIAtlas] Player position broadcaster task started.")
 end);
 
 --[[
@@ -267,6 +292,10 @@ end);
 --]]
 ashita.events.register('unload', 'unload_callback1', function ()
     print("[FFXIAtlas] 'unload' event was called.");
+    -- It's good practice to close the socket on unload
+    if (client) then
+        client:close()
+    end
 end);
 
 --[[
@@ -617,115 +646,115 @@ end);
 * event: d3d_beginscene
 * desc : Event called when the Direct3D device is beginning a scene.
 --]]
-ashita.events.register('d3d_beginscene', 'd3d_beginscene_callback1', function (isRenderingBackBuffer)
+-- ashita.events.register('d3d_beginscene', 'd3d_beginscene_callback1', function (isRenderingBackBuffer)
 
-    -- isRenderingBackBuffer is a flag that will be true when the game is currently rendering to the back buffer.
-    -- Obtain the local player entity..
-    local player = GetPlayerEntity();
-    if (player == nil) then
-        return;
-    end
+--     -- isRenderingBackBuffer is a flag that will be true when the game is currently rendering to the back buffer.
+--     -- Obtain the local player entity..
+--     -- local player = GetPlayerEntity();
+--     -- if (player == nil) then
+--     --     return;
+--     -- end
 
-    -- Determine if the player is moving..
-    local x = player.Movement.LocalPosition.X;
-    local y = player.Movement.LocalPosition.Y;
-    local z = player.Movement.LocalPosition.Z;
-    local zoneId = getPlayerZoneIdFromMemory();
+--     -- -- Determine if the player is moving..
+--     -- local x = player.Movement.LocalPosition.X;
+--     -- local y = player.Movement.LocalPosition.Y;
+--     -- local z = player.Movement.LocalPosition.Z;
+--     -- local zoneId = getPlayerZoneIdFromMemory();
 
-    local msg = string.format('%f,%f,%f,%d', player.Movement.LocalPosition.X, player.Movement.LocalPosition.Y, player.Movement.LocalPosition.Z, zoneId)
-    client:send(msg)
+--     -- local msg = string.format('%f,%f,%f,%d', player.Movement.LocalPosition.X, player.Movement.LocalPosition.Y, player.Movement.LocalPosition.Z, zoneId)
+--     -- client:send(msg)
 
 
-    -- if (mmm.last_x == x and mmm.last_y == y and mmm.last_z == z) then
-    --     mmm.moving = false;
-    -- else
-    --     mmm.moving = true;
-    -- end
+--     -- if (mmm.last_x == x and mmm.last_y == y and mmm.last_z == z) then
+--     --     mmm.moving = false;
+--     -- else
+--     --     mmm.moving = true;
+--     -- end
 
-    -- -- Update the last known coords..
-    -- mmm.last_x = x;
-    -- mmm.last_y = y;
-    -- mmm.last_z = z;
-end);
+--     -- -- Update the last known coords..
+--     -- mmm.last_x = x;
+--     -- mmm.last_y = y;
+--     -- mmm.last_z = z;
+-- end);
 
 --[[
 * event: d3d_endscene
 * desc : Event called when the Direct3D device is ending a scene.
 --]]
-ashita.events.register('d3d_endscene', 'd3d_endscene_callback1', function (isRenderingBackBuffer)
+-- ashita.events.register('d3d_endscene', 'd3d_endscene_callback1', function (isRenderingBackBuffer)
 
-    -- isRenderingBackBuffer is a flag that will be true when the game is currently rendering to the back buffer.
+--     -- isRenderingBackBuffer is a flag that will be true when the game is currently rendering to the back buffer.
 
-end);
+-- end);
 
---[[
-* event: d3d_present
-* desc : Event called when the Direct3D device is presenting a scene.
---]]
-ashita.events.register('d3d_present', 'd3d_present_callback1', function ()
+-- --[[
+-- * event: d3d_present
+-- * desc : Event called when the Direct3D device is presenting a scene.
+-- --]]
+-- ashita.events.register('d3d_present', 'd3d_present_callback1', function ()
 
-end);
+-- end);
 
---[[
-* event: d3d_dp
-* desc : Event called when the Direct3D device is drawing a primitive. (DrawPrimitive)
---]]
-ashita.events.register('d3d_dp', 'd3d_dp_callback1', function (e)
-    --[[ Valid Arguments
+-- --[[
+-- * event: d3d_dp
+-- * desc : Event called when the Direct3D device is drawing a primitive. (DrawPrimitive)
+-- --]]
+-- ashita.events.register('d3d_dp', 'd3d_dp_callback1', function (e)
+--     --[[ Valid Arguments
 
-        e.primitive_type     - (ReadOnly) The type of primitive being rendered.
-        e.start_vertex       - (ReadOnly) Index of the first vertex to load.
-        e.primitive_count    - (ReadOnly) Number of primitives to render.
-        e.blocked            - (Writable) Flag that states if the event has been, or should be, blocked.
-    --]]
-end);
+--         e.primitive_type     - (ReadOnly) The type of primitive being rendered.
+--         e.start_vertex       - (ReadOnly) Index of the first vertex to load.
+--         e.primitive_count    - (ReadOnly) Number of primitives to render.
+--         e.blocked            - (Writable) Flag that states if the event has been, or should be, blocked.
+--     --]]
+-- end);
 
---[[
-* event: d3d_dpup
-* desc : Event called when the Direct3D device is drawing a primitive. (DrawPrimitiveUP)
---]]
-ashita.events.register('d3d_dpup', 'd3d_dpup_callback1', function (e)
-    --[[ Valid Arguments
+-- --[[
+-- * event: d3d_dpup
+-- * desc : Event called when the Direct3D device is drawing a primitive. (DrawPrimitiveUP)
+-- --]]
+-- ashita.events.register('d3d_dpup', 'd3d_dpup_callback1', function (e)
+--     --[[ Valid Arguments
 
-        e.primitive_type             - (ReadOnly) The type of primitive being rendered.
-        e.primitive_count            - (ReadOnly) Number of primitives to render.
-        e.vertex_stream_zero_data    - (ReadOnly) User memory pointer to vertex data to use for vertex stream zero.
-        e.vertex_stream_zero_stride  - (ReadOnly) Stride between data for each vertex, in bytes.
-        e.blocked                    - (Writable) Flag that states if the event has been, or should be, blocked.
-    --]]
-end);
+--         e.primitive_type             - (ReadOnly) The type of primitive being rendered.
+--         e.primitive_count            - (ReadOnly) Number of primitives to render.
+--         e.vertex_stream_zero_data    - (ReadOnly) User memory pointer to vertex data to use for vertex stream zero.
+--         e.vertex_stream_zero_stride  - (ReadOnly) Stride between data for each vertex, in bytes.
+--         e.blocked                    - (Writable) Flag that states if the event has been, or should be, blocked.
+--     --]]
+-- end);
 
---[[
-* event: d3d_dip
-* desc : Event called when the Direct3D device is drawing a primitive. (DrawIndexedPrimitive)
---]]
-ashita.events.register('d3d_dip', 'd3d_dip_callback1', function (e)
-    --[[ Valid Arguments
+-- --[[
+-- * event: d3d_dip
+-- * desc : Event called when the Direct3D device is drawing a primitive. (DrawIndexedPrimitive)
+-- --]]
+-- ashita.events.register('d3d_dip', 'd3d_dip_callback1', function (e)
+--     --[[ Valid Arguments
 
-        e.primitive_type    - (ReadOnly) The type of primitive being rendered.
-        e.min_index         - (ReadOnly) Minimum vertex index for the vertices used during this call.
-        e.num_vertices      - (ReadOnly) Number of vertices used during this call.
-        e.start_index       - (ReadOnly) Location in the index array to start reading indices.
-        e.primitive_count   - (ReadOnly) Number of primitives to render.
-        e.blocked           - (Writable) Flag that states if the event has been, or should be, blocked.
-    --]]
-end);
+--         e.primitive_type    - (ReadOnly) The type of primitive being rendered.
+--         e.min_index         - (ReadOnly) Minimum vertex index for the vertices used during this call.
+--         e.num_vertices      - (ReadOnly) Number of vertices used during this call.
+--         e.start_index       - (ReadOnly) Location in the index array to start reading indices.
+--         e.primitive_count   - (ReadOnly) Number of primitives to render.
+--         e.blocked           - (Writable) Flag that states if the event has been, or should be, blocked.
+--     --]]
+-- end);
 
---[[
-* event: d3d_dipup
-* desc : Event called when the Direct3D device is drawing a primitive. (DrawIndexedPrimitiveUP)
---]]
-ashita.events.register('d3d_dipup', 'd3d_dipup_callback1', function (e)
-    --[[ Valid Arguments
+-- --[[
+-- * event: d3d_dipup
+-- * desc : Event called when the Direct3D device is drawing a primitive. (DrawIndexedPrimitiveUP)
+-- --]]
+-- ashita.events.register('d3d_dipup', 'd3d_dipup_callback1', function (e)
+--     --[[ Valid Arguments
 
-        e.primitive_type             - (ReadOnly) The type of primitive being rendered.
-        e.min_vertex_index           - (ReadOnly) Minimum vertex index, relative to zero, for vertices used during this call. 
-        e.num_vertex_indices         - (ReadOnly) Number of vertices used during this call.
-        e.primitive_count            - (ReadOnly) Number of primitives to render.
-        e.index_data                 - (ReadOnly) User memory pointer to the index data.
-        e.index_data_format          - (ReadOnly) The format type of the index data.
-        e.vertex_stream_zero_data    - (ReadOnly) User memory pointer to vertex data to use for vertex stream zero.
-        e.vertex_stream_zero_stride  - (ReadOnly) Stride between data for each vertex, in bytes.
-        e.blocked                    - (Writable) Flag that states if the event has been, or should be, blocked.
-    --]]
-end);
+--         e.primitive_type             - (ReadOnly) The type of primitive being rendered.
+--         e.min_vertex_index           - (ReadOnly) Minimum vertex index, relative to zero, for vertices used during this call. 
+--         e.num_vertex_indices         - (ReadOnly) Number of vertices used during this call.
+--         e.primitive_count            - (ReadOnly) Number of primitives to render.
+--         e.index_data                 - (ReadOnly) User memory pointer to the index data.
+--         e.index_data_format          - (ReadOnly) The format type of the index data.
+--         e.vertex_stream_zero_data    - (ReadOnly) User memory pointer to vertex data to use for vertex stream zero.
+--         e.vertex_stream_zero_stride  - (ReadOnly) Stride between data for each vertex, in bytes.
+--         e.blocked                    - (Writable) Flag that states if the event has been, or should be, blocked.
+--     --]]
+-- end);
