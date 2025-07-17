@@ -30,10 +30,16 @@ const playerDataCoords = document.getElementById('player-data-coords');
  * @param {object} zone - The zone object containing scale and offset data.
  * @returns {{x: number, y: number}} Pixel coordinates.
  */
-function gameToPixels(x, y, zone) {
-    if (!zone) return { x: 0, y: 0 };
-    const posX = 2 * (zone.offsetX + zone.scale * x);
-    const posY = 2 * (zone.offsetY - zone.scale * y);
+function gameToPixels(x, y, map) {
+    if (map === undefined || map.scale === undefined || map.offsetX === undefined || map.offsetY === undefined) {
+        console.warn('Invalid map data for conversion:', map);
+        return { x: 0, y: 0 };
+    }
+    // Convert game coordinates to pixel coordinates based on the map's scale and offset
+    let posX, posY;  
+    posX = 2 * (map.offsetX + map.scale * x);
+    posY = 2 * (map.offsetY - map.scale * y);
+   
     return { x: posX * 2, y: posY * 2 };
 }
 
@@ -43,10 +49,16 @@ function gameToPixels(x, y, zone) {
  * @param {number} mapId - The ID of the map to load.
  */
 async function loadMap(zoneId, mapId) {
-    // const zone = Object.values(zones).find(z => z.mapId === mapId);
     const zone = zones[zoneId];
-    const mapName = zone ? zone.mapName : 'no_map';
-    const mapPath = `../assets/maps/${mapName}.png`;
+    let mapName = zone ? zone.mapName : 'no_map';
+    let mapPath = `../assets/maps/${mapName}`;
+
+    if(mapId === undefined || mapId === null || zone.maps.length === 1) {
+        mapPath += '.png';
+    }
+    else {
+        mapPath += `_${mapId}.png`;
+    }
 
     try {
         mapSprite.texture = await PIXI.Assets.load(mapPath);
@@ -86,6 +98,44 @@ function calculateHeadingRotation(position2d, playerNavigator) {
     // Update the last known position for the next frame's calculation
     playerState.lastX = position2d.x;
     playerState.lastY = position2d.y;
+}
+
+/**
+ * checks if the player is within a specified range.
+ * @param {object} playerPosition - The player position object {x, y}   
+ * @param {object} range - Ranges object containing x1, x2, y1, y2.
+ * @returns {boolean} True if the player is within the range, false otherwise.
+ */
+function isPlayerInRange(playerPosition, range) {
+    if (playerPosition.x < range.x1 || playerPosition.x > range.x2 || playerPosition.z > range.z2 ||
+        playerPosition.y < range.y1 || playerPosition.y > range.y2 || playerPosition.z > range.z2) {
+        return false; // Player is outside the range
+    }
+    return true; // Player is within the range
+}
+
+/**
+ * checks in which map the player is based on their position.
+ * This is necessary for zones with multiple maps.
+ * @param {object} playerPosition - The player position object {x, y}
+ * @param {object} zone - the zone object containing map data.
+ * @returns {object} The map ID if found, null if not found.
+ */
+function getMapIdFromPlayerPosition(playerPosition, zone) {
+    // Object.values will return an empty array for an empty object.
+    const maps = Object.values(zone?.maps ?? {});
+
+    for (const map of maps) {
+        for (const range of Object.values(map.ranges)) {
+            if (isPlayerInRange(playerPosition, range)) {
+                return map; // Correctly returns the map and exits the function.
+            }
+        }
+    }
+
+    // This part is only reached if no map was found after checking all ranges.
+    console.warn(`No map found for player position in zone ${zone.zoneId}. Player position:`, playerPosition);
+    return null;
 }
 
 /**
@@ -132,6 +182,7 @@ async function initialize() {
     playerNavigator.zIndex = 1;
     
     let currentZoneId = -1;
+    let currentMapId = -1;
     // --- Event Listeners ---
 
     // Listener for the tracking mode switch
@@ -151,13 +202,13 @@ async function initialize() {
         
         if (selectedOption) {
             const zoneId = parseInt(selectedOption.dataset.zoneId, 10);
-            const mapId = zoneId; // TODO>: Fix for zones with multiple maps
+            
             // Manually load the selected map and disable tracking
             trackingSwitch.checked = false;
             isTrackingEnabled = false;
             playerNavigator.visible = false;
-            loadMap(zoneId);
-            updatePlayerDataUI({ mapId: mapId, zoneId: zoneId});
+            loadMap(zoneId, 1);
+            updatePlayerDataUI({ mapId: zoneId, zoneId: zoneId});
             currentZoneId = zoneId;
         }
     });
@@ -177,19 +228,18 @@ async function initialize() {
             }
             return;
         }
-
+        // Zones with multiple maps should handle mapId differently
+        let map = getMapIdFromPlayerPosition({x: x, y: y, z: z}, zone);
         // If the map has changed, update the map texture
-        if (zoneId !== currentZoneId) {
-            await loadMap(zoneId);
+        if (zoneId !== currentZoneId || map !== undefined|| map.mapId !== currentMapId) {
+            await loadMap(zoneId, map.mapId);
             currentZoneId = zoneId;
+            currentMapId = map.mapId;
         }
 
-        // TODO: Zones with multiple maps should handle mapId differently
-        let mapId = zoneId
-
         // Update UI and player navigator position
-        updatePlayerDataUI({ x, y, z, zoneId, mapId });
-        const position2d = gameToPixels(x, y, zone);
+        updatePlayerDataUI({ x, y, z, zoneId, mapId: map.mapId });
+        const position2d = gameToPixels(x, y, map);
         calculateHeadingRotation(position2d, playerNavigator);
         playerNavigator.position.set(position2d.x, position2d.y);
     });
