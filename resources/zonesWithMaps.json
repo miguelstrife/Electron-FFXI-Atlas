@@ -1440,7 +1440,7 @@
     ]
   },
   "33": {
-    "mapName": "al_taieu",
+    "mapName": "altaieu",
     "maps": [
       {
         "mapId": 1,
@@ -1514,7 +1514,7 @@
     ]
   },
   "35": {
-    "mapName": "the_garden_of_ru_hmet",
+    "mapName": "the_garden_of_ruhmet",
     "maps": [
       {
         "mapId": 1,
@@ -7787,7 +7787,7 @@
     ]
   },
   "80": {
-    "mapName": "southern_san_d_oria_s",
+    "mapName": "southern_san_doria_s",
     "maps": [
       {
         "mapId": 1,
@@ -11173,7 +11173,7 @@
     ]
   },
   "130": {
-    "mapName": "ru_aun_gardens",
+    "mapName": "ruaun_gardens",
     "maps": [
       {
         "mapId": 1,
@@ -12443,7 +12443,7 @@
     ]
   },
   "157": {
-    "mapName": "middle_delkfutt_s_tower",
+    "mapName": "middle_delkfutts_tower",
     "maps": [
       {
         "mapId": 1,
@@ -12544,7 +12544,7 @@
     ]
   },
   "158": {
-    "mapName": "upper_delkfutt_s_tower",
+    "mapName": "upper_delkfutts_tower",
     "maps": [
       {
         "mapId": 1,
@@ -14668,7 +14668,7 @@
     ]
   },
   "178": {
-    "mapName": "the_shrine_of_ru_avitau",
+    "mapName": "the_shrine_of_ruavitau",
     "maps": [
       {
         "mapId": 6,
@@ -15146,7 +15146,7 @@
     ]
   },
   "184": {
-    "mapName": "lower_delkfutt_s_tower",
+    "mapName": "lower_delkfutts_tower",
     "maps": [
       {
         "mapId": 4,
@@ -15215,7 +15215,7 @@
     ]
   },
   "185": {
-    "mapName": "dynamis_san_d_oria",
+    "mapName": "dynamis_san_doria",
     "maps": [
       {
         "mapId": 1,
@@ -17852,7 +17852,7 @@
     ]
   },
   "223": {
-    "mapName": "san_d_oria_jeuno_airship",
+    "mapName": "san_doria_jeuno_airship",
     "maps": [
       {
         "mapId": 1,
@@ -17999,7 +17999,7 @@
     ]
   },
   "230": {
-    "mapName": "southern_san_d_oria",
+    "mapName": "southern_san_doria",
     "maps": [
       {
         "mapId": 1,
@@ -18020,7 +18020,7 @@
     ]
   },
   "231": {
-    "mapName": "northern_san_d_oria",
+    "mapName": "northern_san_doria",
     "maps": [
       {
         "mapId": 1,
@@ -18041,7 +18041,7 @@
     ]
   },
   "232": {
-    "mapName": "port_san_d_oria",
+    "mapName": "port_san_doria",
     "maps": [
       {
         "mapId": 1,
@@ -18062,7 +18062,7 @@
     ]
   },
   "233": {
-    "mapName": "chateau_d_oraguille",
+    "mapName": "chateau_doraguille",
     "maps": [
       {
         "mapId": 1,
@@ -18352,7 +18352,7 @@
     ]
   },
   "243": {
-    "mapName": "ru_lude_gardens",
+    "mapName": "rulude_gardens",
     "maps": [
       {
         "mapId": 1,
@@ -20150,7 +20150,7 @@
     ]
   },
   "288": {
-    "mapName": "escha_zi_tah",
+    "mapName": "escha_zitah",
     "maps": [
       {
         "mapId": 1,
@@ -20171,7 +20171,7 @@
     ]
   },
   "289": {
-    "mapName": "escha_ru_aun",
+    "mapName": "escha_ruaun",
     "maps": [
       {
         "mapId": 1,
@@ -20291,7 +20291,7 @@
     ]
   },
   "294": {
-    "mapName": "dynamis_san_d_oria_d",
+    "mapName": "dynamis_san_doria_d",
     "maps": [
       {
         "mapId": 1,
