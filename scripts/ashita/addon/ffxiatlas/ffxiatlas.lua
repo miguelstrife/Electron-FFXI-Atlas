@@ -264,9 +264,6 @@ local function broadcastPlayerData()
     end
 
     local zoneId = getPlayerZoneIdFromMemory()
-    -- Get the Map ID value (zones with several maps)
-    local mapId = player.Session.MapId
-    print(string.format("[FFXIAtlas] Player is in zone %d, map %d", zoneId, mapId))
 
     local msg = string.format('%f,%f,%f,%d', player.Movement.LocalPosition.X, player.Movement.LocalPosition.Y, player.Movement.LocalPosition.Z, zoneId)
     
