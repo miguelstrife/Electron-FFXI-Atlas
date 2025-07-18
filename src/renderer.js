@@ -133,6 +133,11 @@ function updateRelatedMapsUI(zoneId) {
             // Create the image thumbnail
             const img = document.createElement('img');
             img.src = mapPath;
+            // Add an onerror handler to load the fallback image if the primary one fails
+            img.onerror = () => {
+                console.warn(`Could not load thumbnail: ${mapPath}. Using fallback.`);
+                img.src = No_Map;
+            };
             img.className = 'img-fluid rounded related-map-thumb';
             if (mapId === currentMapId) {
                 img.classList.add('active');
