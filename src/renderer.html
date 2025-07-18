@@ -10,11 +10,32 @@
         }
         #map-container canvas {
             width: 100% !important;
-            height: auto !important;
+            height: 100% !important;
             border-radius: 0.375rem; /* Match Bootstrap's border-radius */
         }
         .card {
             margin-bottom: 1.5rem;
+        }
+        .related-map-thumb {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 2px solid transparent;
+        }
+        .related-map-thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .related-map-thumb.active {
+            border-color: #0d6efd; /* Bootstrap primary color */
+        }
+        .map-thumb-wrapper {
+            position: relative;
+        }
+        .map-id-badge {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 10;
         }
     </style>
 </head>
@@ -40,18 +61,6 @@
                     </div>
                 </div>
 
-                <!-- Map Selection Card -->
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Map Selection</h5>
-                        <label for="zone-search-input" class="form-label">Search for a zone:</label>
-                        <input class="form-control" list="zone-datalist-options" id="zone-search-input" placeholder="Type to search...">
-                        <datalist id="zone-datalist-options">
-                            <!-- Options will be populated by renderer.js -->
-                        </datalist>
-                    </div>
-                </div>
-
                 <!-- Player Data Card -->
                 <div class="card shadow-sm">
                     <div class="card-header">
@@ -71,6 +80,33 @@
                             <span id="player-data-coords" class="badge bg-secondary rounded-pill">N/A</span>
                         </li>
                     </ul>
+                </div>
+
+                <!-- Map Selection Card -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Map Selection</h5>
+                        <label for="zone-search-input" class="form-label">Search for a zone:</label>
+                        <input class="form-control" list="zone-datalist-options" id="zone-search-input" placeholder="Type to search...">
+                        <datalist id="zone-datalist-options">
+                            <!-- Options will be populated by renderer.js -->
+                        </datalist>
+                    </div>
+                </div>
+
+                <!-- Related Maps Card -->
+                <div class="card shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        Related Maps
+                        <div id="related-maps-loader" class="spinner-border spinner-border-sm text-primary d-none" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="related-maps-container" class="row row-cols-2 row-cols-lg-3 g-2">
+                            <!-- Map thumbnails will be populated here -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

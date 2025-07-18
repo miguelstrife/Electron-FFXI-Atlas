@@ -4,6 +4,8 @@ const No_Map = '../assets/maps/no_map.png';
 let isTrackingEnabled = true;
 let zones = {}; // Will be loaded from file
 let playerState = { lastX: 0, lastY: 0 };
+let currentZoneId = -1;
+let currentMapId = -1;
 
 // --- PIXI App Setup ---
 const app = new PIXI.Application();
@@ -19,9 +21,28 @@ const zoneDatalist = document.getElementById('zone-datalist-options');
 const playerDataZoneName = document.getElementById('player-data-zone-name');
 const playerDataMapId = document.getElementById('player-data-map-id');
 const playerDataCoords = document.getElementById('player-data-coords');
+// UI references for the related maps feature
+const relatedMapsContainer = document.getElementById('related-maps-container');
+const relatedMapsLoader = document.getElementById('related-maps-loader');
 
 
 // --- Functions ---
+
+/**
+ * Scales and centers the main map container to fit the canvas.
+ * This preserves the map's aspect ratio.
+ */
+function resizeAndCenterMap() {
+    const { width, height } = app.renderer.screen;
+    if (mapContainer && mapSprite && mapSprite.texture.valid) {
+        const mapWidth = mapSprite.texture.width;
+        const mapHeight = mapSprite.texture.height;
+        const scale = Math.min(width / mapWidth, height / mapHeight);
+        mapContainer.scale.set(scale);
+        mapContainer.x = (width - mapContainer.width) / 2;
+        mapContainer.y = (height - mapContainer.height) / 2;
+    }
+}
 
 /**
  * Converts FFXI game coordinates to pixel coordinates for the map.
@@ -49,15 +70,19 @@ function gameToPixels(x, y, map) {
  * @param {number} mapId - The ID of the map to load.
  */
 async function loadMap(zoneId, mapId) {
+    currentZoneId = zoneId;
+    currentMapId = mapId;
+    
     const zone = zones[zoneId];
-    let mapName = zone ? zone.mapName : 'no_map';
-    let mapPath = `../assets/maps/${mapName}`;
+    let mapPath = No_Map;
 
-    if(mapId === undefined || mapId === null || zone.maps.length === 1) {
-        mapPath += '.png';
-    }
-    else {
-        mapPath += `_${mapId}.png`;
+    if (zone) {
+        const map = zone.maps[mapId - 1];
+        if (map) {
+            // Construct path based on your logic (with or without mapId suffix)
+            const mapName = zone.mapName;
+            mapPath = `../assets/maps/${mapName}${Object.keys(zone.maps).length > 1 ? `_${mapId}` : ''}.png`;
+        }
     }
 
     try {
@@ -66,6 +91,72 @@ async function loadMap(zoneId, mapId) {
         console.error(`Failed to load map: ${mapPath}`, error);
         mapSprite.texture = await PIXI.Assets.load(No_Map);
     }
+    
+    resizeAndCenterMap();
+    updateRelatedMapsUI(zoneId); // Refresh related maps to show active one
+}
+
+/**
+ * Finds all maps for a given zone and displays them as thumbnails.
+ * @param {number | null} zoneId - The ID of the zone to display maps for.
+ */
+function updateRelatedMapsUI(zoneId) {
+    relatedMapsContainer.innerHTML = ''; // Clear previous maps
+    const zone = zones[zoneId];
+    if (!zone || !zone.maps) {
+        relatedMapsLoader.classList.add('d-none');
+        return;
+    }
+
+    relatedMapsLoader.classList.remove('d-none'); // Show loader
+
+    const maps = Object.values(zone.maps);
+
+    setTimeout(() => {
+        maps.forEach(map => {
+            const mapId = map.mapId;
+            const mapName = zone.mapName;
+            const mapPath = `../assets/maps/${mapName}${maps.length > 1 ? `_${mapId}` : ''}.png`;
+
+            const col = document.createElement('div');
+            col.className = 'col';
+
+            // Create a wrapper for positioning the badge
+            const wrapper = document.createElement('div');
+            wrapper.className = 'map-thumb-wrapper';
+
+             // Create the badge for the Map ID
+            const badge = document.createElement('span');
+            badge.className = 'map-id-badge badge bg-success rounded-pill';
+            badge.textContent = `Map ${mapId}`;
+
+            // Create the image thumbnail
+            const img = document.createElement('img');
+            img.src = mapPath;
+            img.className = 'img-fluid rounded related-map-thumb';
+            if (mapId === currentMapId) {
+                img.classList.add('active');
+            }
+            img.title = `${mapName.replace(/_/g, ' ')} (Map ${mapId})`;
+            
+            img.addEventListener('click', () => {
+                loadMap(zoneId, mapId);
+                updatePlayerDataUI({ mapId: mapId, zoneId: zoneId });
+                trackingSwitch.checked = false;
+                isTrackingEnabled = false;
+                playerNavigator.visible = false;
+            });
+
+            // Append badge and image to the wrapper
+            wrapper.appendChild(badge);
+            wrapper.appendChild(img);
+            
+            // Append the wrapper to the column
+            col.appendChild(wrapper);
+            relatedMapsContainer.appendChild(col);
+        });
+        relatedMapsLoader.classList.add('d-none'); // Hide loader
+    }, 10);
 }
 
 /**
@@ -122,20 +213,15 @@ function isPlayerInRange(playerPosition, range) {
  * @returns {object} The map ID if found, null if not found.
  */
 function getMapIdFromPlayerPosition(playerPosition, zone) {
-    // Object.values will return an empty array for an empty object.
     const maps = Object.values(zone?.maps ?? {});
-
     for (const map of maps) {
         for (const range of Object.values(map.ranges)) {
             if (isPlayerInRange(playerPosition, range)) {
-                return map; // Correctly returns the map and exits the function.
+                return map;
             }
         }
     }
-
-    // This part is only reached if no map was found after checking all ranges.
-    console.warn(`No map found for player position in zone ${zone.zoneId}. Player position:`, playerPosition);
-    return null;
+    return maps.length > 0 ? maps[0] : null; // Default to first map if no range matches
 }
 
 /**
@@ -143,7 +229,7 @@ function getMapIdFromPlayerPosition(playerPosition, zone) {
  */
 async function initialize() {
     // Init PIXI
-    await app.init({ background: '#343a40', width: 1024, height: 1024 });
+    await app.init({ background: '#343a40', height: 1024, width: 1024 });
     document.getElementById('map-container').appendChild(app.canvas);
     app.stage.addChild(mapContainer);
     mapContainer.x = 0;
@@ -180,9 +266,11 @@ async function initialize() {
     playerNavigator.scale.set(0.5, 0.5);
     playerNavigator.visible = true; // Initially visible
     playerNavigator.zIndex = 1;
+
+    // Setup resize listener
+    app.renderer.on('resize', resizeAndCenterMap);
+    resizeAndCenterMap(); // Call once for initial sizing
     
-    let currentZoneId = -1;
-    let currentMapId = -1;
     // --- Event Listeners ---
 
     // Listener for the tracking mode switch
@@ -209,7 +297,7 @@ async function initialize() {
             playerNavigator.visible = false;
             loadMap(zoneId, 1);
             updatePlayerDataUI({ mapId: zoneId, zoneId: zoneId});
-            currentZoneId = zoneId;
+            // currentZoneId = zoneId;
         }
     });
 
@@ -223,18 +311,16 @@ async function initialize() {
         if (!zone) {
             console.warn(`Unknown zone ID: ${zoneId}`);
             if (currentZoneId !== -1) {
-                mapSprite.texture = await PIXI.Assets.load(No_Map);
-                currentZoneId = -1;
+                await loadMap(null, null);
             }
             return;
         }
         // Zones with multiple maps should handle mapId differently
         let map = getMapIdFromPlayerPosition({x: x, y: y, z: z}, zone);
+        if (!map) return;
         // If the map has changed, update the map texture
-        if (zoneId !== currentZoneId || map !== undefined|| map.mapId !== currentMapId) {
+        if (zoneId !== currentZoneId || map.mapId !== currentMapId) {
             await loadMap(zoneId, map.mapId);
-            currentZoneId = zoneId;
-            currentMapId = map.mapId;
         }
 
         // Update UI and player navigator position
