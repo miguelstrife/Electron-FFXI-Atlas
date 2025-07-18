@@ -22,7 +22,7 @@ FFXI Atlas is a cross-platform Electron app that displays zone maps from *Final 
 - [Ashita v4](https://github.com/AshitaXI/Ashita-v4beta) installed and configured
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
 - [FFXI](http://www.playonline.com/ff11us/download/media/install_win.html) installed via Square Enix or Steam.
-- A map pack. [Remapster](https://github.com/AkadenTK/remapster_maps/releases) packs 1024 are recommended.
+- A map pack. [Remapster](https://github.com/AkadenTK/remapster_maps/releases) wiki packs 1024 are recommended.
   
 ### 1. Clone the Repository
 
