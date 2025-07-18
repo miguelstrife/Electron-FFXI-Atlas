@@ -2,7 +2,7 @@
 
 FFXI Atlas is a cross-platform Electron app that displays zone maps from *Final Fantasy XI* and tracks your character's real-time location using Ashita v4. Whether you're navigating the dunes of Valkurm or the depths of Uleguerand Range, FFXI Atlas helps you find your way—just like a personal Navi-map for Vana'diel.
 
-![FFXI Atlas Screenshot](assets/screenshot.png)
+![FFXI Atlas Screenshot](assets/screenshot.gif)
 
 ## ✨ Features
 
