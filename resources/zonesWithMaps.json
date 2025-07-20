@@ -133,6 +133,22 @@
             "z2": 10000
           }
         ]
+      },
+      {
+        "mapId": 2,
+        "scale": 0.1,
+        "offsetX": 127.671,
+        "offsetY": 131.721,
+        "ranges": [
+          {
+            "x1": -10000,
+            "y1": -10000,
+            "z1": -10000,
+            "x2": 10000,
+            "y2": 10000,
+            "z2": 10000
+          }
+        ]
       }
     ]
   },
@@ -1461,7 +1477,7 @@
     ]
   },
   "34": {
-    "mapName": "grand_palace_of_hu_xzoi",
+    "mapName": "grand_palace_of_huxzoi",
     "maps": [
       {
         "mapId": 1,

@@ -3,7 +3,7 @@ const PlayerNavigatorInit = { X: 512, Y: 512 };
 const No_Map = '../assets/maps/no_map.png';
 let isTrackingEnabled = true;
 let zones = {}; // Will be loaded from file
-let playerState = { lastX: 0, lastY: 0 };
+let playerState = { lastX: 0, lastY: 0, isMoving: false };
 let currentZoneId = -1;
 let currentMapId = -1;
 
@@ -27,6 +27,26 @@ const relatedMapsLoader = document.getElementById('related-maps-loader');
 
 
 // --- Functions ---
+
+/**
+ * Starts a blinking (alpha pulse) animation for the player navigator sprite.
+ * The animation only runs when the player is stationary.
+ */
+function startPlayerNavigatorAnimation() {
+    let elapsed = 0.0;
+    app.ticker.add((ticker) => {
+        // Check the player's movement state
+        if (playerState.isMoving) {
+            // If moving, make the navigator solid and reset the animation timer
+            playerNavigator.alpha = 1.0;
+            elapsed = 0.0;
+        } else {
+            // If stationary, apply the blinking animation
+            elapsed += ticker.deltaTime;
+            playerNavigator.alpha = 0.75 + Math.sin(elapsed / 20.0) * 0.25;
+        }
+    });
+}
 
 /**
  * Scales and centers the main map container to fit the canvas.
@@ -189,6 +209,9 @@ function calculateHeadingRotation(position2d, playerNavigator) {
         // Calculate the angle of movement and rotate the navigator
         // The PI/2 offset aligns the "up" pointing sprite with the direction of movement
         playerNavigator.rotation = Math.atan2(dy, dx) + (Math.PI / 2);
+        playerState.isMoving = true;
+    } else {
+        playerState.isMoving = false;
     }
     
     // Update the last known position for the next frame's calculation
@@ -260,7 +283,7 @@ async function initialize() {
     mapSprite.zIndex = 0; // Set map to be at the bottom layer
     mapContainer.addChild(mapSprite);
 
-    const navigatorTexture = await PIXI.Assets.load('../assets/compass/playerNavigator.png');
+    const navigatorTexture = await PIXI.Assets.load('../assets/compass/playerNavigator_3.png');
     playerNavigator = new PIXI.Sprite(navigatorTexture);
     mapContainer.addChild(playerContainer);
     playerContainer.x = 0;
@@ -271,6 +294,9 @@ async function initialize() {
     playerNavigator.scale.set(0.5, 0.5);
     playerNavigator.visible = true; // Initially visible
     playerNavigator.zIndex = 1;
+
+    // Call the new encapsulated animation function
+    startPlayerNavigatorAnimation();
 
     // Setup resize listener
     app.renderer.on('resize', resizeAndCenterMap);
