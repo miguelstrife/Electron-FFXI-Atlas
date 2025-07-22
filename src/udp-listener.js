@@ -1,30 +1,30 @@
 const dgram = require('dgram');
 const socket = dgram.createSocket('udp4');
-// const emitter = global.sharedPositionEmitter || require('events').EventEmitter.prototype;
-// const EventEmitter = require('events');
 const { BrowserWindow } = require('electron');
 
-
-// const eventEmitter = new EventEmitter();
 const UDP_PORT = 12345;
 
 socket.on('message', (msg, rinfo) => {
-    const [x, y, z, zoneId] = msg.toString().split(',');
-    const data = { x: parseFloat(x), y: parseFloat(y), z: parseFloat(z), zoneId: zoneId.trim() };
-    //Send to renderer process
+    // The message from the Lua addon is now a JSON string.
+    // We can forward it directly to the renderer process, which will parse it.
+    const jsonString = msg.toString();
+
+    // Find the main browser window.
     const win = BrowserWindow.getAllWindows()[0];
     if (win) {
-        win.webContents.send('position', data);
+        // Send the raw JSON string to the renderer process on the 'position' channel.
+        win.webContents.send('position', jsonString);
     }
-    // emitter.emit('position', { x: parseFloat(x), z: parseFloat(z), zoneId });
-    // eventEmitter.emit('position', { x: parseFloat(x), z: parseFloat(z), zoneId });
-    // For debugging purposes, log the received position
-    // console.log(`Received position update: x=${x}, y=${y}, z=${z}, zoneId=${zoneId} from ${rinfo.address}:${rinfo.port}`);
+    
+    // For debugging purposes, you can uncomment this to see the raw JSON in your console.
+    // console.log(`Received data: ${jsonString} from ${rinfo.address}:${rinfo.port}`);
 });
 
 socket.on('error', (err) => {
-        console.error(`UDP server error:\n${err.stack}`);
-        udpServer.close();
+    console.error(`UDP server error:\n${err.stack}`);
+    socket.close();
 });
 
 socket.bind(UDP_PORT);
+
+console.log(`FFXI Atlas UDP listener started on port ${UDP_PORT}`);

@@ -6,21 +6,25 @@ let zones = {}; // Will be loaded from file
 let playerState = { lastX: 0, lastY: 0, isMoving: false };
 let currentZoneId = -1;
 let currentMapId = -1;
+const partyNavigators = new Map();
 
 // --- PIXI App Setup ---
 const app = new PIXI.Application();
 const mapContainer = new PIXI.Container();
 const playerContainer = new PIXI.Container();
 let mapSprite;
-let playerNavigator;
+let playerNavigator; // This is for the main player
+let partyContainer; // A separate container for party member sprites
+let partyNavigatorTexture; // Texture for party member sprites
 
 // --- UI Element References ---
 const trackingSwitch = document.getElementById('tracking-mode-switch');
 const zoneSearchInput = document.getElementById('zone-search-input');
 const zoneDatalist = document.getElementById('zone-datalist-options');
-const playerDataZoneName = document.getElementById('player-data-zone-name');
-const playerDataMapId = document.getElementById('player-data-map-id');
-const playerDataCoords = document.getElementById('player-data-coords');
+// const playerDataZoneName = document.getElementById('player-data-zone-name');
+// const playerDataMapId = document.getElementById('player-data-map-id');
+// const playerDataCoords = document.getElementById('player-data-coords');
+const partyDataList = document.getElementById('party-data-list');
 // UI references for the related maps feature
 const relatedMapsContainer = document.getElementById('related-maps-container');
 const relatedMapsLoader = document.getElementById('related-maps-loader');
@@ -185,14 +189,81 @@ function updateRelatedMapsUI(zoneId) {
 }
 
 /**
- * Updates the player data display on the UI.
- * @param {object} data - The player data object {x, y, z, zoneId, mapId}.
+ * Updates the Party Data UI with a list of all members.
+ * @param {object} player - The main player's data object.
+ * @param {Array} party - An array of party member data objects.
  */
-function updatePlayerDataUI(data) {
-    const zone = zones[data.zoneId];
-    playerDataZoneName.textContent = zone ? zone.mapName.replace(/_/g, ' ') : 'Unknown';
-    playerDataMapId.textContent = data.mapId || 'N/A';
-    playerDataCoords.textContent = data.x ? `${data.x.toFixed(2)}, ${data.y.toFixed(2)}, ${data.z.toFixed(2)}` : 'N/A';
+function updatePartyDataUI(player, party) {
+    partyDataList.innerHTML = ''; // Clear old list
+
+    const allMembers = [player, ...party.filter(p => p.name !== player.name)];
+
+    allMembers.forEach(member => {
+        const zone = zones[member.zoneId];
+        const zoneName = zone ? zone.mapName.replace(/_/g, ' ') : 'Unknown';
+        const isPlayer = member.name === player.name;
+
+        const itemHTML = `
+            <div class="list-group-item ${isPlayer ? 'player-row' : ''}">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">${member.name} ${isPlayer ? '(You)' : ''}</h6>
+                    <small class="text-muted">${zoneName}</small>
+                </div>
+                <p class="mb-1 small text-muted">Coords: ${member.x.toFixed(2)}, ${member.y.toFixed(2)}, ${member.z.toFixed(2)}</p>
+            </div>
+        `;
+        partyDataList.insertAdjacentHTML('beforeend', itemHTML);
+    });
+}
+
+/**
+ * Manages the sprites for party members on the map.
+ * @param {Array} party - An array of party member data objects.
+ * @param {object} player - The main player's data object.
+ * @param {object} currentMap - The currently displayed map object.
+ */
+function updatePartyNavigators(party, player, currentMap) {
+    const updatedMembers = new Set();
+    
+    // Filter out the main player to only process other party members
+    const otherMembers = party.filter(p => p.name !== player.name);
+
+    otherMembers.forEach(member => {
+        updatedMembers.add(member.name);
+
+        // Only draw party members who are in the same zone as the player
+        if (member.zoneId !== player.zoneId) {
+            // If they are on the map, remove them
+            if (partyNavigators.has(member.name)) {
+                partyNavigators.get(member.name).destroy();
+                partyNavigators.delete(member.name);
+            }
+            return;
+        }
+
+        const position2d = gameToPixels(member.x, member.y, currentMap);
+
+        if (partyNavigators.has(member.name)) {
+            // Update existing sprite
+            partyNavigators.get(member.name).position.set(position2d.x, position2d.y);
+        } else {
+            const partySprite = new PIXI.Sprite(partyNavigatorTexture);
+            partySprite.anchor.set(0.5);
+            partySprite.scale.set(0.4); // Slightly smaller than the main player
+            partySprite.alpha = 0.9; // Slightly transparent to differentiate
+            partySprite.position.set(position2d.x, position2d.y);
+            partyContainer.addChild(partySprite);
+            partyNavigators.set(member.name, partySprite);
+        }
+    });
+
+    // Clean up sprites for members who have left the party
+    for (const name of partyNavigators.keys()) {
+        if (!updatedMembers.has(name)) {
+            partyNavigators.get(name).destroy();
+            partyNavigators.delete(name);
+        }
+    }
 }
 
 /**
@@ -283,7 +354,13 @@ async function initialize() {
     mapSprite.zIndex = 0; // Set map to be at the bottom layer
     mapContainer.addChild(mapSprite);
 
+    // Create a separate container for party member dots
+    partyContainer = new PIXI.Container();
+    partyContainer.zIndex = 1;
+    mapContainer.addChild(partyContainer);
+
     const navigatorTexture = await PIXI.Assets.load('../assets/compass/playerNavigator_3.png');
+    partyNavigatorTexture = await PIXI.Assets.load('../assets/compass/partyMemberNavigator.png');
     playerNavigator = new PIXI.Sprite(navigatorTexture);
     mapContainer.addChild(playerContainer);
     playerContainer.x = 0;
@@ -293,7 +370,7 @@ async function initialize() {
     playerNavigator.position.set(PlayerNavigatorInit.X, PlayerNavigatorInit.Y);
     playerNavigator.scale.set(0.5, 0.5);
     playerNavigator.visible = true; // Initially visible
-    playerNavigator.zIndex = 1;
+    playerNavigator.zIndex = 2; // Ensure player is on top of party dots
 
     // Call the new encapsulated animation function
     startPlayerNavigatorAnimation();
@@ -308,9 +385,9 @@ async function initialize() {
     trackingSwitch.addEventListener('change', (event) => {
         isTrackingEnabled = event.target.checked;
         playerNavigator.visible = isTrackingEnabled;
+        partyContainer.visible = isTrackingEnabled;
         if (!isTrackingEnabled) {
-            // Clear player data when tracking is off
-            updatePlayerDataUI({});
+            partyDataList.innerHTML = '';
         }
     });
 
@@ -326,37 +403,73 @@ async function initialize() {
             trackingSwitch.checked = false;
             isTrackingEnabled = false;
             playerNavigator.visible = false;
+            partyContainer.visible = false;
             loadMap(zoneId, 1);
-            updatePlayerDataUI({ mapId: zoneId, zoneId: zoneId});
+            // updatePlayerDataUI({ mapId: zoneId, zoneId: zoneId});
             // currentZoneId = zoneId;
         }
     });
 
     // Listener for position updates from the main process
-    window.ffxiAtlas.onPositionUpdate(async ({ x, y, z, zoneId }) => {
-        if (!isTrackingEnabled) {
-            return; // Do nothing if tracking is disabled
-        }
+    // window.ffxiAtlas.onPositionUpdate(async ({ x, y, z, zoneId }) => {
+    //     if (!isTrackingEnabled) {
+    //         return; // Do nothing if tracking is disabled
+    //     }
 
-        const zone = zones[zoneId];
-        if (!zone) {
-            console.warn(`Unknown zone ID: ${zoneId}`);
-            if (currentZoneId !== -1) {
-                await loadMap(null, null);
-            }
+    //     const zone = zones[zoneId];
+    //     if (!zone) {
+    //         console.warn(`Unknown zone ID: ${zoneId}`);
+    //         if (currentZoneId !== -1) {
+    //             await loadMap(null, null);
+    //         }
+    //         return;
+    //     }
+    //     // Zones with multiple maps should handle mapId differently
+    //     let map = getMapIdFromPlayerPosition({x: x, y: y, z: z}, zone);
+    //     if (!map) return;
+    //     // If the map has changed, update the map texture
+    //     if (zoneId !== currentZoneId || map.mapId !== currentMapId) {
+    //         await loadMap(zoneId, map.mapId);
+    //     }
+
+    //     // Update UI and player navigator position
+    //     updatePlayerDataUI({ x, y, z, zoneId, mapId: map.mapId });
+    //     const position2d = gameToPixels(x, y, map);
+    //     calculateHeadingRotation(position2d, playerNavigator);
+    //     playerNavigator.position.set(position2d.x, position2d.y);
+    // });
+    window.ffxiAtlas.onPositionUpdate(async (jsonData) => {
+        if (!isTrackingEnabled) return;
+
+        let data;
+        try {
+            data = JSON.parse(jsonData);
+        } catch (e) {
+            console.error("Failed to parse JSON data from addon:", e);
             return;
         }
-        // Zones with multiple maps should handle mapId differently
-        let map = getMapIdFromPlayerPosition({x: x, y: y, z: z}, zone);
+
+        const player = data.player;
+        const party = data.party || [];
+        
+        const zone = zones[player.zoneId];
+        if (!zone) {
+            if (currentZoneId !== -1) await loadMap(null, null);
+            return;
+        }
+        
+        const map = getMapIdFromPlayerPosition(player, zone);
         if (!map) return;
-        // If the map has changed, update the map texture
-        if (zoneId !== currentZoneId || map.mapId !== currentMapId) {
-            await loadMap(zoneId, map.mapId);
+
+        if (player.zoneId !== currentZoneId || map.mapId !== currentMapId) {
+            await loadMap(player.zoneId, map.mapId);
         }
 
-        // Update UI and player navigator position
-        updatePlayerDataUI({ x, y, z, zoneId, mapId: map.mapId });
-        const position2d = gameToPixels(x, y, map);
+        // Update UI and Navigators
+        updatePartyDataUI(player, party);
+        updatePartyNavigators(party, player, map);
+
+        const position2d = gameToPixels(player.x, player.y, map);
         calculateHeadingRotation(position2d, playerNavigator);
         playerNavigator.position.set(position2d.x, position2d.y);
     });

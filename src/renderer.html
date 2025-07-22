@@ -37,6 +37,10 @@
             left: 5px;
             z-index: 10;
         }
+        .player-row {
+            font-weight: bold;
+            background-color: rgba(13, 110, 253, 0.1);
+        }
     </style>
 </head>
 <body class="p-3">
@@ -62,24 +66,15 @@
                 </div>
 
                 <!-- Player Data Card -->
+                <!-- Party Data Card -->
                 <div class="card shadow-sm">
                     <div class="card-header">
-                        Player Data
+                        Party Data
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Zone Name
-                            <span id="player-data-zone-name" class="badge bg-primary rounded-pill">N/A</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Map ID
-                            <span id="player-data-map-id" class="badge bg-secondary rounded-pill">N/A</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Coordinates (X, Y, Z)
-                            <span id="player-data-coords" class="badge bg-secondary rounded-pill">N/A</span>
-                        </li>
-                    </ul>
+                    <!-- This list will be dynamically populated -->
+                    <div id="party-data-list" class="list-group list-group-flush">
+                        <!-- JS will insert player rows here -->
+                    </div>
                 </div>
 
                 <!-- Map Selection Card -->
