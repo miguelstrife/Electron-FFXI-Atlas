@@ -1,6 +1,6 @@
 // --- Constants and State ---
 const PlayerNavigatorInit = { X: 512, Y: 512 };
-const No_Map = '../assets/maps/no_map.png';
+const No_Map = window.ffxiAtlas.getPath('assets/maps/no_map.png');
 let isTrackingEnabled = true;
 let zones = {}; // Will be loaded from file
 let playerState = { lastX: 0, lastY: 0, isMoving: false };
@@ -25,8 +25,20 @@ const playerDataCoords = document.getElementById('player-data-coords');
 const relatedMapsContainer = document.getElementById('related-maps-container');
 const relatedMapsLoader = document.getElementById('related-maps-loader');
 
-
 // --- Functions ---
+
+/**
+ * Creates the correct asset URL for a given map.
+ * @param {string} mapName - The base name of the map file.
+ * @param {number} mapId - The ID of the specific map.
+ * @param {object} zone - The zone object containing all its maps.
+ * @returns {string} The formatted asset URL.
+ */
+function getMapAssetUrl(mapName, mapId, zone) {
+    const hasMultipleMaps = Object.keys(zone.maps).length > 1;
+    const mapFileName = `${mapName}${hasMultipleMaps ? `_${mapId}` : ''}.png`;
+    return window.ffxiAtlas.getPath(`assets/maps/${mapFileName}`);
+}
 
 /**
  * Starts a blinking (alpha pulse) animation for the player navigator sprite.
@@ -77,9 +89,8 @@ function gameToPixels(x, y, map) {
         return { x: 0, y: 0 };
     }
     // Convert game coordinates to pixel coordinates based on the map's scale and offset
-    let posX, posY;  
-    posX = 2 * (map.offsetX + map.scale * x);
-    posY = 2 * (map.offsetY - map.scale * y);
+    let posX = 2 * (map.offsetX + map.scale * x);
+    let posY = 2 * (map.offsetY - map.scale * y);
    
     return { x: posX * 2, y: posY * 2 };
 }
@@ -99,9 +110,8 @@ async function loadMap(zoneId, mapId) {
     if (zone) {
         const map = zone.maps[mapId - 1];
         if (map) {
-            // Construct path based on your logic (with or without mapId suffix)
-            const mapName = zone.mapName;
-            mapPath = `../assets/maps/${mapName}${Object.keys(zone.maps).length > 1 ? `_${mapId}` : ''}.png`;
+            // Use helper function to get the map path
+            mapPath = getMapAssetUrl(zone.mapName, mapId, zone);
         }
     }
 
@@ -136,7 +146,7 @@ function updateRelatedMapsUI(zoneId) {
         maps.forEach(map => {
             const mapId = map.mapId;
             const mapName = zone.mapName;
-            const mapPath = `../assets/maps/${mapName}${maps.length > 1 ? `_${mapId}` : ''}.png`;
+            const mapPath = getMapAssetUrl(mapName, mapId, zone);
 
             const col = document.createElement('div');
             col.className = 'col';
@@ -283,7 +293,7 @@ async function initialize() {
     mapSprite.zIndex = 0; // Set map to be at the bottom layer
     mapContainer.addChild(mapSprite);
 
-    const navigatorTexture = await PIXI.Assets.load('../assets/compass/playerNavigator_3.png');
+    const navigatorTexture = await PIXI.Assets.load(window.ffxiAtlas.getPath('/assets/compass/playerNavigator_3.png'));
     playerNavigator = new PIXI.Sprite(navigatorTexture);
     mapContainer.addChild(playerContainer);
     playerContainer.x = 0;
