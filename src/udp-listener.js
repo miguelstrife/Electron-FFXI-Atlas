@@ -17,7 +17,7 @@ socket.on('message', (msg, rinfo) => {
 
 socket.on('error', (err) => {
         console.error(`UDP server error:\n${err.stack}`);
-        udpServer.close();
+        socket.close();
 });
 
 socket.bind(UDP_PORT);
