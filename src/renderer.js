@@ -1,6 +1,22 @@
+// --- Helper function to get correct asset paths ---
+// This is crucial for making the app work in both development and production.
+function getAssetPath(relativePath) {
+    // We get these values from the preload script (see preload.js)
+    const { isPackaged, resourcesPath } = window.electronAPI;
+
+    if (isPackaged) {
+        // In a packaged app, assets are in the 'resources' directory.
+        // We construct an absolute path and prefix it with the file:// protocol.
+        const absolutePath = `${resourcesPath}/${relativePath}`.replace(/\\/g, '/');
+        return `file://${absolutePath}`;
+    }
+    // In development, assets are served relative to the webpack dev server's root.
+    return relativePath;
+}
+
 // --- Constants and State ---
 const PlayerNavigatorInit = { X: 512, Y: 512 };
-const No_Map = '../assets/maps/no_map.png';
+const No_Map = getAssetPath('assets/maps/no_map.png');
 let isTrackingEnabled = true;
 let zones = {}; // Will be loaded from file
 let playerState = { lastX: 0, lastY: 0, isMoving: false };
@@ -101,7 +117,8 @@ async function loadMap(zoneId, mapId) {
         if (map) {
             // Construct path based on your logic (with or without mapId suffix)
             const mapName = zone.mapName;
-            mapPath = `../assets/maps/${mapName}${Object.keys(zone.maps).length > 1 ? `_${mapId}` : ''}.png`;
+            const relativePath = `assets/maps/${mapName}${Object.keys(zone.maps).length > 1 ? `_${mapId}` : ''}.png`;
+            mapPath = getAssetPath(relativePath);
         }
     }
 
@@ -136,7 +153,8 @@ function updateRelatedMapsUI(zoneId) {
         maps.forEach(map => {
             const mapId = map.mapId;
             const mapName = zone.mapName;
-            const mapPath = `../assets/maps/${mapName}${maps.length > 1 ? `_${mapId}` : ''}.png`;
+            const relativePath = `assets/maps/${mapName}${maps.length > 1 ? `_${mapId}` : ''}.png`;
+            const mapPath = getAssetPath(relativePath);
 
             const col = document.createElement('div');
             col.className = 'col';
@@ -283,7 +301,7 @@ async function initialize() {
     mapSprite.zIndex = 0; // Set map to be at the bottom layer
     mapContainer.addChild(mapSprite);
 
-    const navigatorTexture = await PIXI.Assets.load('../assets/compass/playerNavigator_3.png');
+    const navigatorTexture = await PIXI.Assets.load(getAssetPath('assets/compass/playerNavigator_3.png'));
     playerNavigator = new PIXI.Sprite(navigatorTexture);
     mapContainer.addChild(playerContainer);
     playerContainer.x = 0;
