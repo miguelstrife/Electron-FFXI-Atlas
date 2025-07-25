@@ -4,31 +4,34 @@ const path = require('path');
 // Start UDP listener
 require('./udp-listener');
 
-const isDev = !app.isPackaged;
-
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 1920,
+    width: 1550,
     height: 1080,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: false,
       contextIsolation: true,
       sandbox: false,
+      webSecurity: true,
     },
   });
 
-  win.loadFile('src/renderer.html');
+  win.loadFile(path.join(__dirname, 'renderer.html'));
 }
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
 
+if (require('electron-squirrel-startup')) app.quit();
+
 app.whenReady().then(() => {
   createWindow();
+
   app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    });
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
 });

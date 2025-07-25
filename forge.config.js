@@ -4,16 +4,24 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    executableName: 'ffxi-atlas',
+     extraResource: [
+      './assets',
+      './data',
+      './scripts',
+    ],
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        name: 'ffxi-atlas',
+      },
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['win32', 'darwin', 'linux'],
     },
     {
       name: '@electron-forge/maker-deb',
