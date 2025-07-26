@@ -236,8 +236,9 @@ function calculateHeadingRotation(position2d, playerNavigator) {
  * @returns {boolean} True if the player is within the range, false otherwise.
  */
 function isPlayerInRange(playerPosition, range) {
-    if (playerPosition.x < range.x1 || playerPosition.x > range.x2 || playerPosition.z > range.z2 ||
-        playerPosition.y < range.y1 || playerPosition.y > range.y2 || playerPosition.z > range.z2) {
+    if (playerPosition.x < range.x1 || playerPosition.x > range.x2 || 
+        playerPosition.y < range.y1 || playerPosition.y > range.y2 || 
+        playerPosition.z < range.z1 || playerPosition.z > range.z2) {
         return false; // Player is outside the range
     }
     return true; // Player is within the range
